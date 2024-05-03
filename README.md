@@ -17,6 +17,4 @@ Il progetto si concentra sull'utilizzo di algoritmi di computer vision per l'ana
 
 Il progetto è stato realizzato da Lorenzo Corradi, Marco Morini e Filippo Bologna, studenti di Artificial Intelligence presso UNIMORE
 
-## Licenza
 
-Questo progetto è distribuito con licenza [MIT](LICENSE).
