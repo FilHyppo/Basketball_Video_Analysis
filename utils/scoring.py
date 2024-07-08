@@ -105,7 +105,7 @@ class State:
 
 
 
-class BasketballHoopDetector:
+class BasketballScoreDetector:
     def __init__(self, *args, **kwargs):  
         if 'base_frame' in kwargs:
             self._init_single_frame_detector(kwargs['base_frame'], kwargs['hoop_regions'], kwargs.get('verbose', False), kwargs.get('threshold', 25))
@@ -115,7 +115,7 @@ class BasketballHoopDetector:
             raise ValueError("Invalid arguments passed to BasketballHoopDetector")
 
 
-    def _init_full_detector(self, video_path, output_path_color, hoop_regions, output_path_gray=None, verbose=False, threshold=25):
+    def _init_full_detector(self, video_path, output_path_color, hoop_regions, output_path_gray=None, verbose=False, threshold=10):
         self.verbose = verbose
         self.threshold = threshold
         self.video_path = video_path
@@ -193,24 +193,24 @@ class BasketballHoopDetector:
         
         for hoop_top_left, hoop_bottom_right in self.hoop_regions:
             cv2.rectangle(frame, hoop_top_left, hoop_bottom_right, (0, 0, 255), 3)
-
+        
         founds=[False for _ in self.hoop_regions]
         at_least_one_detected=[False for _ in self.hoop_regions]
         for i in range(1, num_labels):  # Skip the background label (0)
             over=False
             detected=False
             x, y, w, h, area = stats[i]
-            if area > 10 and area < 200:  # Filter out small components
+            if area > 5 and area < 200:  # Filter out small components
                 for idx, (hoop_top_left, hoop_bottom_right) in enumerate(self.hoop_regions): 
                     over=False
                     detected=False
                     if founds[idx]:
                         continue
-                    
+                    #cv2.rectangle(binary_diff_color, (x, y), (x + w, y + h), (0, 255, 0), 2)
                     W=hoop_bottom_right[0]-hoop_top_left[0]
                     H=hoop_bottom_right[1]-hoop_top_left[1]
-                    cv2.rectangle(frame, (hoop_top_left[0] - W, hoop_top_left[1]-round(2.5*H)), (hoop_bottom_right[0] + W, hoop_top_left[1]), (255, 0, 0), 2)
-                    if(hoop_top_left[1]-round(2.5*H) < y < hoop_top_left[1] and hoop_top_left[0] - W < x < hoop_bottom_right[0] + W):     #need to to hit the top of the hoop first
+                    cv2.rectangle(frame, (round(hoop_top_left[0] - 0.5*W), hoop_top_left[1]-round(1*H)), (round(hoop_bottom_right[0] + 0.5*W), hoop_top_left[1]), (255, 0, 0), 2)
+                    if(hoop_top_left[1]-round(1*H) < y < hoop_top_left[1] and hoop_top_left[0] - 0.5*W < x < hoop_bottom_right[0] + 0.5*W):     #need to to hit the top of the hoop first
                         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                         over=True
                         founds[idx]=True
@@ -242,12 +242,13 @@ class BasketballHoopDetector:
             binary_diff_color=self.write_score(binary_diff_color)
             self.output_video_gray.write(binary_diff_color)
 
-        
+        cv2.putText(frame, f"framecount: {self.frame_count}", (round(frame.shape[1]/2) - 200,frame.shape[0] - 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
         if self.output_video:
             frame=self.write_score(frame)
             self.output_video.write(frame)
         #cv2.imwrite('./outputs/frame' + str(self.frame_count) + ".jpg", frame)      #save single frames
-        cv2.putText(frame, f"framecount: {self.frame_count}", (round(frame.shape[1]/2) - 200,frame.shape[0] - 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+        #cv2.imwrite('./outputs/frame' + str(self.frame_count) + ".jpg", binary_diff_color)      #save single frames
+        
         self.frame_count += 1
 
         if self.verbose:
