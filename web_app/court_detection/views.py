@@ -51,7 +51,9 @@ def select_corners(request, game_id):
     #    return render(request, 'yourapp/error.html', {'message': 'Could not read video frame.'})
 
     # Salva il frame come immagine
-    frame = utils.undistort_frame(frame, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+    if game.distortion_parameters['fx']:
+        frame = utils.undistort_frame(frame, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+    
     frame_path = os.path.join(settings.MEDIA_ROOT, 'frames', f'frame_{game_id}.jpg')
     os.makedirs(os.path.dirname(frame_path), exist_ok=True)
     cv2.imwrite(frame_path, frame)
@@ -78,8 +80,7 @@ def save_corners(request, game_id):
             #Multiply each x corner by the width of the frame and each y corner by the height of the frame
             corners = [{'x': int(corner['x'] * w), 'y': int(corner['y'] * h)} for corner in corners]
             game.corners = utils.get_corners(corners)
-            #corners = {f'P{i}': corner for i, corner in enumerate(corners)}
-            #game.corners = corners
+            
             game.save()
             
             return JsonResponse({'status': 'success'})
@@ -96,47 +97,49 @@ def top_view(request, game_id):
     output_path = os.path.join(settings.MEDIA_ROOT, 'top_views', f'top_view_{game_id}.jpg')
     output_path_undistort_frame = os.path.join(settings.MEDIA_ROOT, 'top_views', f'undistorted_{game_id}.jpg')
     output_path_distorted_frame = os.path.join(settings.MEDIA_ROOT, 'top_views', f'distorted_{game_id}.jpg')
-    #if os.path.exists(output_path):
-    #    print("Esiste")
-    #    return render(request, 'court_detection/top_view.html', {'game': game, 'top_view_url': output_path})
+    
     
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    camera_matrix = utils.camera_matrix(game.distortion_parameters)
-    dist_coeffs = utils.dist_coeffs(game.distortion_parameters)
-
     cap = cv2.VideoCapture(video_path)
-    cap.set(cv2.CAP_PROP_POS_FRAMES, 1100)
+    cap.set(cv2.CAP_PROP_POS_FRAMES, 100)
     ret, frame = cap.read()
-
     cap.release()
-
-    cv2.imwrite(output_path_distorted_frame, frame)
 
     top_left = game.corners['P0']
     bottom_right = game.corners['P11']
     bottom_left = game.corners['P3']
     top_right = game.corners['P8']
-
+    
     print("top_left", top_left)
     print("bottom_right", bottom_right)
     print("bottom_left", bottom_left)
     print("top_right", top_right)
+    #                                                      G  B   R
+    cv2.circle(frame, (top_left["x"], top_left["y"]), 10, (0, 0, 255), -1)
+    cv2.circle(frame, (bottom_right["x"], bottom_right["y"]), 10, (255, 255, 255), -1)
+    cv2.circle(frame, (bottom_left["x"], bottom_left["y"]), 10, (0, 0, 0), -1)
+    cv2.circle(frame, (top_right["x"], top_right["y"]), 10, (255, 0, 255), -1)
+
+    cv2.line(frame, (top_left["x"], top_left["y"]), (top_right["x"], top_right["y"]), (0, 255, 0), 2)
+    cv2.line(frame, (top_right["x"], top_right["y"]), (bottom_right["x"], bottom_right["y"]), (0, 255, 0), 2)
+    cv2.line(frame, (bottom_right["x"], bottom_right["y"]), (bottom_left["x"], bottom_left["y"]), (0, 255, 0), 2)
+    cv2.line(frame, (bottom_left["x"], bottom_left["y"]), (top_left["x"], top_left["y"]), (0, 255, 0), 2)
+    
+    if game.distortion_parameters['fx']:
+        camera_matrix = utils.camera_matrix(game.distortion_parameters)
+        dist_coeffs = utils.dist_coeffs(game.distortion_parameters)
+
+        cv2.imwrite(output_path_distorted_frame, frame)
+        
+        undistort_frame = utils.undistort_frame(frame, camera_matrix, dist_coeffs)
+    else:
+        undistort_frame = frame
+        camera_matrix = None
+        dist_coeffs = None
+    
 
 
-#    for key, value in game.corners.items():
-#        if value['x'] == top_left['x'] and value['y'] == top_left['y']:
-#            cv2.circle(frame, (value['x'], value['y']), 2, (0, 0, 255), -1)
-#        elif value['x'] == bottom_right['x'] and value['y'] == bottom_right['y']:
-#            cv2.circle(frame, (value['x'], value['y']), 2, (255, 0, 0), -1)
-#        elif value['x'] == bottom_left['x'] and value['y'] == bottom_left['y']:
-#            cv2.circle(frame, (value['x'], value['y']), 2, (0, 255, 0), -1)
-#        elif value['x'] == top_right['x'] and value['y'] == top_right['y']:
-#            cv2.circle(frame, (value['x'], value['y']), 2, (255, 255, 0), -1)
-#        else:
-#            cv2.circle(frame, (value['x'], value['y']), 2, (255, 255, 255), -1)
-
-    undistort_frame = utils.undistort_frame(frame, camera_matrix, dist_coeffs)
 
     points = np.array([
         [top_left["x"], top_left["y"]],
@@ -157,7 +160,7 @@ def top_view(request, game_id):
         [0, 0],
         [w, 0],
         [0, h],
-        [w, h]
+        [w, h],
     ], dtype=np.float32)
     M = cv2.getPerspectiveTransform(points, dst)
     frame_top_view = cv2.warpPerspective(undistort_frame, M, (w, h))

@@ -52,35 +52,30 @@ def dist_coeffs(distortion_parameters: dict):
     ])
 
 def get_corners(corners: list): 
-    
-    top_left = corners[0]
-    top_right = corners[0]
-    bottom_right = corners[0]
-    bottom_left = corners[0]
+
+    max_distance = 0
     for value in corners:
-        if value['x'] ** 2 + value['y'] ** 2 > bottom_right['x'] ** 2 + bottom_right['y'] ** 2:
+        distance = value['x'] ** 2 + value['y'] ** 2
+        if distance > max_distance:
+            max_distance = distance
             bottom_right = value
+    corners.remove(bottom_right)
 
-    max_distance = 0
+    distance_x = 999999
     for value in corners:
-        distance = abs(bottom_right['x'] - value['x']) + abs(bottom_right['y'] - value['y']) ** 2
-        if distance > max_distance:
-            max_distance = distance
-            top_left = value
-
-    max_distance = 0
-    for value in corners:
-        distance = (bottom_right['x'] - value['x']) ** 2 + abs(top_left['y'] - value['y'])
-        if distance > max_distance:
-            max_distance = distance
-            bottom_left = value
-
-    max_distance = 0
-    for value in corners:
-        distance = abs(bottom_left['x'] - value['x']) ** 2 + abs(bottom_left['y'] - value['y']) ** 2
-        if distance > max_distance and (value['x'] != bottom_left['x'] and value['y'] != bottom_left['y']) and (value['x'] != top_left['x'] and value['y'] != top_left['y']) and (value['x'] != bottom_right['x'] and value['y'] != bottom_right['y']):
-            max_distance = distance
+        if abs(value['x'] - bottom_right['x']) < distance_x:
             top_right = value
+            distance_x = abs(value['x'] - bottom_right['x'])
+    corners.remove(top_right)
+
+    min_y = 999999
+    for value in corners:
+        if value['y'] < min_y:
+            top_left = value
+            min_y = value['y']
+    corners.remove(top_left)
+
+    bottom_left = corners[0]
 
     print("Top left:", top_left)
     print("Bottom right:", bottom_right)

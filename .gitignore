@@ -4,3 +4,5 @@ datasets/
 # Ignore Python cache directories
 __pycache__/
 **/__pycache__/
+webapp/media/
+webapp/db.sqlite3
