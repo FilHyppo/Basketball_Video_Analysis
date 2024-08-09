@@ -53,12 +53,7 @@ def dist_coeffs(distortion_parameters: dict):
 
 def get_corners(corners: list): 
 
-    max_distance = 0
-    for value in corners:
-        distance = value['x'] ** 2 + value['y'] ** 2
-        if distance > max_distance:
-            max_distance = distance
-            bottom_right = value
+    bottom_right = max(corners, key=lambda x: x['x'])
     corners.remove(bottom_right)
 
     distance_x = 999999
@@ -75,7 +70,18 @@ def get_corners(corners: list):
             min_y = value['y']
     corners.remove(top_left)
 
-    bottom_left = corners[0]
+    diff_x = 999999
+    for value in corners:
+        d = (value['x'] - top_left['x']) #SENZA abs perchè voglio sia indietro
+        if d < diff_x:
+            bottom_left = value
+            diff_x = d
+    
+    corners.remove(bottom_left)
+
+    middle_top = min(corners, key=lambda x: x['y'])
+    corners.remove(middle_top)
+    middle_bottom = corners[0]
 
     print("Top left:", top_left)
     print("Bottom right:", bottom_right)
@@ -87,4 +93,76 @@ def get_corners(corners: list):
         'P11': bottom_right,
         'P3': bottom_left,
         'P8': top_right,
+        'P6': middle_top,
+        'P7': middle_bottom,
     }
+
+def draw_points(frame, top_left, bottom_right, bottom_left, top_right, middle_top, middle_bottom):
+    
+    cv2.circle(frame, (top_left["x"], top_left["y"]), 10, (255, 0, 0), -1)
+    cv2.circle(frame, (bottom_right["x"], bottom_right["y"]), 10, (0, 0, 0), -1)
+    cv2.circle(frame, (bottom_left["x"], bottom_left["y"]), 10, (0, 255, 0), -1)
+    cv2.circle(frame, (top_right["x"], top_right["y"]), 10, (0, 0, 255), -1)
+
+    cv2.circle(frame, (middle_top["x"], middle_top["y"]), 10, (127, 127, 127), -1)
+    cv2.circle(frame, (middle_bottom["x"], middle_bottom["y"]), 10, (255, 255, 255), -1)
+
+    cv2.line(frame, (top_left["x"], top_left["y"]), (top_right["x"], top_right["y"]), (0, 255, 0), 2)
+    cv2.line(frame, (top_right["x"], top_right["y"]), (bottom_right["x"], bottom_right["y"]), (0, 255, 0), 2)
+    cv2.line(frame, (bottom_right["x"], bottom_right["y"]), (bottom_left["x"], bottom_left["y"]), (0, 255, 0), 2)
+    cv2.line(frame, (bottom_left["x"], bottom_left["y"]), (top_left["x"], top_left["y"]), (0, 255, 0), 2)
+    
+
+
+
+def feet(n, foot):
+    return int(n * foot)
+
+def draw_lines(frame):
+    h, w = frame.shape[:2]
+
+    foot1 = h / 50
+    foot2 = w / 94
+    foot = (foot1 + foot2) / 2
+
+    inside_area_left = [(0, int(h * 0.5) + feet(8, foot)), 
+                        (0 + feet(19, foot), int(h * 0.5) + feet(8, foot)), 
+                        (0, int(h * 0.5) - feet(8, foot)),
+                        (0 + feet(19, foot), int(h * 0.5) - feet(8,foot)),
+    ]
+    cv2.rectangle(frame, inside_area_left[0], inside_area_left[3], (0, 255, 0), 2)
+    inside_area_right = [(w - feet(19, foot), int(h * 0.5) + feet(8, foot)), 
+                        (w, int(h * 0.5) + feet(8, foot)), 
+                        (w - feet(19, foot), int(h * 0.5) - feet(8,foot)),
+                        (w, int(h * 0.5) - feet(8, foot)),
+    ]
+    cv2.rectangle(frame, inside_area_right[0], inside_area_right[3], (0, 255, 0), 2)
+
+    middle_line = [(w // 2, 0), (w // 2, h)]
+    center = [(w // 2, h // 2)]
+    cv2.line(frame, middle_line[0], middle_line[1], (0, 255, 0), 2)
+    cv2.circle(frame, center[0], feet(10, foot), (0, 255, 0), 2)
+
+    rim_left = [(feet(4, foot), int(h * 0.5))]
+    cv2.circle(frame, rim_left[0], 10, (255, 255, 0), -1)
+
+    three_point_line_left = [(0, int(h - feet(3, foot))),
+                             (feet(13, foot), int(h - feet(3, foot))),
+                             (0, feet(3, foot)),
+                             (feet(13, foot), feet(3, foot))
+    ]
+    cv2.line(frame, three_point_line_left[0], three_point_line_left[1], (0, 255, 0), 2)
+    cv2.line(frame, three_point_line_left[2], three_point_line_left[3], (0, 255, 0), 2)
+    cv2.ellipse(frame, rim_left[0], (feet(24, foot), feet(24, foot)), 0, -72, 70, (0, 255, 0), 2)
+
+    rim_right = [(w - feet(4, foot), int(h * 0.5))]
+    cv2.circle(frame, rim_right[0], 10, (255, 255, 0), -1)
+
+    three_point_line_right = [(w, int(h - feet(3, foot))),
+                            (w - feet(13, foot), int(h - feet(3, foot))),
+                            (w, feet(3, foot)),
+                            (w - feet(13, foot), feet(3, foot))
+        ]
+    cv2.line(frame, three_point_line_right[0], three_point_line_right[1], (0, 255, 0), 2)
+    cv2.line(frame, three_point_line_right[2], three_point_line_right[3], (0, 255, 0), 2)
+    cv2.ellipse(frame, rim_right[0], (feet(24, foot), feet(24, foot)), 0, 110, 250, (0, 255, 0), 2)

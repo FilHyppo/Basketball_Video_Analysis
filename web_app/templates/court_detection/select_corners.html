@@ -11,8 +11,8 @@
             width: 100%;
         }
         .corner {
-            width: 10px;
-            height: 10px;
+            width: 3px;
+            height: 3px;
             background: red;
             position: absolute;
             border-radius: 50%;
@@ -34,7 +34,7 @@
         const frameContainer = document.getElementById('frame-container');
         const frame = document.getElementById('frame');
         let corners = [];
-        let num_corners = 4;
+        let num_corners = 6;
 
         frame.onload = function() {
             const aspectRatio = frame.naturalWidth / frame.naturalHeight;

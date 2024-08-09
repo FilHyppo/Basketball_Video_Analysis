@@ -9,6 +9,7 @@ import os
 from . import utils
 import json
 import numpy as np
+import random
 
 def home_page(request):
     return render(request, 'court_detection/home.html')
@@ -42,8 +43,10 @@ def select_corners(request, game_id):
     game = get_object_or_404(BasketballGame, id=game_id)
     video_path = os.path.join(settings.MEDIA_ROOT, game.video.name)
 
-    # Estrai un frame dal video
+    # Estrai un frame in posizione random
     cap = cv2.VideoCapture(video_path)
+    n = random.randint(0, cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    cap.set(cv2.CAP_PROP_POS_FRAMES, n)
     ret, frame = cap.read()
     cap.release()
 
@@ -70,8 +73,8 @@ def save_corners(request, game_id):
             data = json.loads(request.body)
             corners = data.get('corners')
         
-            if not corners or len(corners) != 4:
-                return JsonResponse({'status': 'error', 'message': f'Invalid number of corners. Expected 16, got {len(corners)}'})
+            if not corners or len(corners) != 6:
+                return JsonResponse({'status': 'error', 'message': f'Invalid number of corners. Expected 6, got {len(corners)}'})
             
             cap = cv2.VideoCapture(game.video.path)
             ret, frame = cap.read()
@@ -98,74 +101,65 @@ def top_view(request, game_id):
     output_path_undistort_frame = os.path.join(settings.MEDIA_ROOT, 'top_views', f'undistorted_{game_id}.jpg')
     output_path_distorted_frame = os.path.join(settings.MEDIA_ROOT, 'top_views', f'distorted_{game_id}.jpg')
     
-    
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    cap = cv2.VideoCapture(video_path)
-    cap.set(cv2.CAP_PROP_POS_FRAMES, 100)
-    ret, frame = cap.read()
-    cap.release()
+    frame_path = os.path.join(settings.MEDIA_ROOT, 'frames', f'frame_{game_id}.jpg')
+    frame = cv2.imread(frame_path)
 
     top_left = game.corners['P0']
     bottom_right = game.corners['P11']
     bottom_left = game.corners['P3']
     top_right = game.corners['P8']
     
-    print("top_left", top_left)
-    print("bottom_right", bottom_right)
-    print("bottom_left", bottom_left)
-    print("top_right", top_right)
-    #                                                      G  B   R
-    cv2.circle(frame, (top_left["x"], top_left["y"]), 10, (0, 0, 255), -1)
-    cv2.circle(frame, (bottom_right["x"], bottom_right["y"]), 10, (255, 255, 255), -1)
-    cv2.circle(frame, (bottom_left["x"], bottom_left["y"]), 10, (0, 0, 0), -1)
-    cv2.circle(frame, (top_right["x"], top_right["y"]), 10, (255, 0, 255), -1)
+    middle_top = game.corners['P6']
+    middle_bottom = game.corners['P7']
+    #print("middle_top", middle_top)
+    #print("middle_bottom", middle_bottom)
+#
+    #print("top_left", top_left)
+    #print("bottom_right", bottom_right)
+    #print("bottom_left", bottom_left)
+    #print("top_right", top_right)
 
-    cv2.line(frame, (top_left["x"], top_left["y"]), (top_right["x"], top_right["y"]), (0, 255, 0), 2)
-    cv2.line(frame, (top_right["x"], top_right["y"]), (bottom_right["x"], bottom_right["y"]), (0, 255, 0), 2)
-    cv2.line(frame, (bottom_right["x"], bottom_right["y"]), (bottom_left["x"], bottom_left["y"]), (0, 255, 0), 2)
-    cv2.line(frame, (bottom_left["x"], bottom_left["y"]), (top_left["x"], top_left["y"]), (0, 255, 0), 2)
+    undistort_frame = frame
     
-    if game.distortion_parameters['fx']:
-        camera_matrix = utils.camera_matrix(game.distortion_parameters)
-        dist_coeffs = utils.dist_coeffs(game.distortion_parameters)
-
-        cv2.imwrite(output_path_distorted_frame, frame)
-        
-        undistort_frame = utils.undistort_frame(frame, camera_matrix, dist_coeffs)
-    else:
-        undistort_frame = frame
-        camera_matrix = None
-        dist_coeffs = None
-    
-
-
+    #utils.draw_points(undistort_frame, top_left, bottom_right, bottom_left, top_right, middle_top, middle_bottom)
 
     points = np.array([
         [top_left["x"], top_left["y"]],
         [top_right["x"], top_right["y"]],
         [bottom_left["x"], bottom_left["y"]],
-        [bottom_right["x"], bottom_right["y"]]
+        [bottom_right["x"], bottom_right["y"]],
+        [middle_top["x"], middle_top["y"]],
+        [middle_bottom["x"], middle_bottom["y"]],
     ], dtype=np.float32)
+    points_names = ['top_left', 'top_right', 'bottom_left', 'bottom_right', 'middle_top', 'middle_bottom']
 
     points = points.reshape(-1, 1, 2)
 
-    print("Salvo undistorted frame in: ", output_path)
-    cv2.imwrite(output_path_undistort_frame, undistort_frame)
+    #print("Salvo undistorted frame in: ", output_path)
+    #cv2.imwrite(output_path_undistort_frame, undistort_frame)
 
     h, w = undistort_frame.shape[:2]
-    
-    # Calcola la trasformazione prospettica
+    h, w = h // 2, w // 2
     dst = np.array([
         [0, 0],
         [w, 0],
         [0, h],
         [w, h],
+        [w // 2, 0],
+        [w // 2, h],
     ], dtype=np.float32)
-    M = cv2.getPerspectiveTransform(points, dst)
+    M, status = cv2.findHomography(points, dst)
+    print("Points used for the homography: ")
+    for name, used in zip(points_names, status):
+        if used:
+            print(name)
     frame_top_view = cv2.warpPerspective(undistort_frame, M, (w, h))
 
-    print("Salvo top view in: ", output_path)
+    utils.draw_lines(frame_top_view)
+
+    #print("Salvo top view in: ", output_path)
     cv2.imwrite(output_path, frame_top_view)
     output_url = os.path.join(settings.MEDIA_URL, 'top_views', f'top_view_{game_id}.jpg')
     return render(request, 'court_detection/top_view.html', {'game': game, 'top_view_url': output_url})
