@@ -6,3 +6,5 @@ __pycache__/
 **/__pycache__/
 /web_app/db.sqlite3
 /web_app/media
+web_app/db.sqlite3
+/web_app/media

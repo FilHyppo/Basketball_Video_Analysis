@@ -72,8 +72,8 @@ def save_corners(request, game_id):
         try:
             data = json.loads(request.body)
             corners = data.get('corners')
-        
-            if not corners or len(corners) != 6:
+            print("corners", corners)
+            if not corners or len(corners) < 4:
                 return JsonResponse({'status': 'error', 'message': f'Invalid number of corners. Expected 6, got {len(corners)}'})
             
             cap = cv2.VideoCapture(game.video.path)
@@ -81,9 +81,11 @@ def save_corners(request, game_id):
             cap.release()
             h, w = frame.shape[:2]
             #Multiply each x corner by the width of the frame and each y corner by the height of the frame
-            corners = [{'x': int(corner['x'] * w), 'y': int(corner['y'] * h)} for corner in corners]
-            game.corners = utils.get_corners(corners)
+            new_corners = dict()
+            for corner in corners:
+                new_corners[str(corner['id'])] =  {'x': int(corner['x'] * w), 'y': int(corner['y'] * h)} 
             
+            game.corners = new_corners
             game.save()
             
             return JsonResponse({'status': 'success'})
@@ -106,13 +108,6 @@ def top_view(request, game_id):
     frame_path = os.path.join(settings.MEDIA_ROOT, 'frames', f'frame_{game_id}.jpg')
     frame = cv2.imread(frame_path)
 
-    top_left = game.corners['P0']
-    bottom_right = game.corners['P11']
-    bottom_left = game.corners['P3']
-    top_right = game.corners['P8']
-    
-    middle_top = game.corners['P6']
-    middle_bottom = game.corners['P7']
     #print("middle_top", middle_top)
     #print("middle_bottom", middle_bottom)
 #
@@ -123,43 +118,78 @@ def top_view(request, game_id):
 
     undistort_frame = frame
     
-    #utils.draw_points(undistort_frame, top_left, bottom_right, bottom_left, top_right, middle_top, middle_bottom)
-
-    points = np.array([
-        [top_left["x"], top_left["y"]],
-        [top_right["x"], top_right["y"]],
-        [bottom_left["x"], bottom_left["y"]],
-        [bottom_right["x"], bottom_right["y"]],
-        [middle_top["x"], middle_top["y"]],
-        [middle_bottom["x"], middle_bottom["y"]],
-    ], dtype=np.float32)
-    points_names = ['top_left', 'top_right', 'bottom_left', 'bottom_right', 'middle_top', 'middle_bottom']
-
-    points = points.reshape(-1, 1, 2)
-
-    #print("Salvo undistorted frame in: ", output_path)
-    #cv2.imwrite(output_path_undistort_frame, undistort_frame)
+    #utils.draw_points(undistort_frame, game.corners)
+    cv2.imwrite(output_path_undistort_frame, undistort_frame)
 
     h, w = undistort_frame.shape[:2]
     h, w = h // 2, w // 2
-    dst = np.array([
-        [0, 0],
-        [w, 0],
-        [0, h],
-        [w, h],
-        [w // 2, 0],
-        [w // 2, h],
-    ], dtype=np.float32)
+    src = []
+    dst = []
+    points_names = []
+
+    for id, corner in game.corners.items():
+        src.append([corner['x'], corner['y']])
+        dst.append([utils.corner_pos(id, w, h)])
+        points_names.append(id)
+        #print("Uso il punto", id, "con coordinate", corner)
+
+    points = np.array(src, dtype=np.float32)
+    points = points.reshape(-1, 1, 2)
+
+    dst = np.array(dst, dtype=np.float32)
+    dst = dst.reshape(-1, 1, 2)
+    
+
+
     M, status = cv2.findHomography(points, dst)
-    print("Points used for the homography: ")
-    for name, used in zip(points_names, status):
-        if used:
-            print(name)
+    
     frame_top_view = cv2.warpPerspective(undistort_frame, M, (w, h))
 
-    utils.draw_lines(frame_top_view)
+    #utils.draw_lines(frame_top_view)
 
     #print("Salvo top view in: ", output_path)
     cv2.imwrite(output_path, frame_top_view)
     output_url = os.path.join(settings.MEDIA_URL, 'top_views', f'top_view_{game_id}.jpg')
     return render(request, 'court_detection/top_view.html', {'game': game, 'top_view_url': output_url})
+
+def mask(request, game_id):
+    game = get_object_or_404(BasketballGame, id=game_id)
+    video_path = game.video.path
+    cap = cv2.VideoCapture(video_path)
+    ret, frame = cap.read()
+    cap.release()
+
+    H, W = frame.shape[:2]
+
+    top_view_path = os.path.join(settings.MEDIA_ROOT, 'top_views', f'top_view_{game_id}.jpg')
+    top_view = cv2.imread(top_view_path)
+
+    h, w = top_view.shape[:2]
+
+    src = []
+    dst = []
+    points_names = []
+
+    for id, corner in game.corners.items():
+        dst.append([corner['x'], corner['y']])
+        src.append([utils.corner_pos(id, w, h)])
+        points_names.append(id)
+        
+
+    points = np.array(src, dtype=np.float32)
+    points = points.reshape(-1, 1, 2)
+
+    dst = np.array(dst, dtype=np.float32)
+    dst = dst.reshape(-1, 1, 2)
+
+    print("Punti sorgenti:", points)
+    print("Punti destinazione:", dst)
+
+    M, status = cv2.findHomography(points, dst)
+
+    mask = cv2.warpPerspective(top_view, M, (W, H))
+
+    output_path = os.path.join(settings.MEDIA_ROOT, 'masks', f'mask_{game_id}.jpg')
+    cv2.imwrite(output_path, mask)
+    mask_url = os.path.join(settings.MEDIA_URL, 'masks', f'mask_{game_id}.jpg')
+    return render(request, 'court_detection/mask.html', {'game': game, 'mask_url': mask_url})

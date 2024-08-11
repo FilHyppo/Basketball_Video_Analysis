@@ -8,4 +8,5 @@ urlpatterns=[
     path('select_corners/<int:game_id>/', views.select_corners, name='select_corners'),
     path('save_corners/<int:game_id>/', views.save_corners, name='save_corners'),
     path('top-view/<int:game_id>/', views.top_view, name='top_view'),
+    path('mask/<int:game_id>/', views.mask, name='mask'),
 ]

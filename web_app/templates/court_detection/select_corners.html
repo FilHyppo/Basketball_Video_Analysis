@@ -1,30 +1,65 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Select Corners</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        #frame-container {
+        #frame-container, #court-container {
             position: relative;
             margin: 0 auto;
-            max-width: 1000px; /* Aumentato da 640px a 1000px */
+            max-width: 1000px;
+            width: 100%;
+        }
+        #frame {
+            display: block;
             width: 100%;
         }
         .corner {
-            width: 3px;
-            height: 3px;
+            width: 5px;
+            height: 5px;
             background: red;
             position: absolute;
             border-radius: 50%;
             transform: translate(-50%, -50%);
+        }
+        .corner-button {
+            position: absolute;
+            background-color: transparent;
+            border: 2px solid blue;
+            border-radius: 50%;
+            width: 23px;
+            height: 23px;
+            cursor: pointer;
+            padding: 0;
         }
     </style>
 </head>
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Select Corners of the Basketball Court</h1>
-        <div id="frame-container" class="border">
-            <img id="frame" src="{{ frame_url }}" width="100%" alt="Video Frame">
+        <div class="row">
+            <div id="frame-container" class="col-md-6 border">
+                <img id="frame" src="{{ frame_url }}" alt="Video Frame">
+            </div>
+            <div id="court-container" class="col-md-6">
+                <img id="court" src="{% static 'images/basketball_court.jpg' %}" width="100%" alt="Basketball Court">
+                <!-- Pulsanti per angoli -->
+                <button id="P0" class="corner-button" style="top: 3%; left: 4%;"></button>
+                <button id="P1" class="corner-button" style="top: 33.5%; left: 4.3%;"></button>
+                <button id="P2" class="corner-button" style="top: 55%; left: 4.3%;"></button>
+                <button id="P3" class="corner-button" style="top: 88%; left: 4%;"></button>
+                <button id="P4" class="corner-button" style="top: 32.5%; left: 21.5%;"></button>
+                <button id="P5" class="corner-button" style="top: 60%; left: 21.5%;"></button>
+                <button id="P6" class="corner-button" style="top: 0%; left: 47%;"></button>
+                <button id="P7" class="corner-button" style="top: 93%; left: 47%;"></button>
+                <button id="P8" class="corner-button" style="top: 2.5%; left: 91%;"></button>
+                <button id="P9" class="corner-button" style="top: 34.5%; left: 90%;"></button>
+                <button id="P10" class="corner-button" style="top: 56.35%; left: 91%;"></button>
+                <button id="P11" class="corner-button" style="top:89%; left: 90.5%;"></button>
+                <button id="P12" class="corner-button" style="top: 32%; left: 72.5%;"></button>
+                <button id="P13" class="corner-button" style="top: 59.5%; left: 72.5%;"></button>
+            </div>
         </div>
         <button id="save-corners" class="btn btn-success btn-block mt-4">Save Corners</button>
         <button id="reset-corners" class="btn btn-danger btn-block mt-2">Reset Corners</button>
@@ -34,33 +69,82 @@
         const frameContainer = document.getElementById('frame-container');
         const frame = document.getElementById('frame');
         let corners = [];
-        let num_corners = 6;
+        let selectedCorner = null;
+        const numCorners = 14;
+        const minNumCorners = 4;
 
-        frame.onload = function() {
+        // Calcola le dimensioni e la posizione del frame
+        function updateFrameSize() {
             const aspectRatio = frame.naturalWidth / frame.naturalHeight;
             frameContainer.style.height = (frameContainer.offsetWidth / aspectRatio) + 'px';
-        };
+        }
 
+        frame.onload = updateFrameSize;
+        window.addEventListener('resize', updateFrameSize);
+
+        // Aggiunge un angolo al clic
         frameContainer.addEventListener('click', function(event) {
-            if (corners.length < num_corners) {
-                const rect = frameContainer.getBoundingClientRect();
-                const x = (event.clientX - rect.left) / rect.width;
-                const y = (event.clientY - rect.top) / rect.height;
-                
+            if (selectedCorner && corners.length < numCorners) {
+                const rect = frame.getBoundingClientRect();
+                const frameWidth = frame.offsetWidth;
+                const frameHeight = frame.offsetHeight;
+                const x = (event.clientX - rect.left) / frameWidth;
+                const y = (event.clientY - rect.top) / frameHeight;
+
+                const frameRect = frameContainer.getBoundingClientRect();
+                const xCorner = (event.clientX - frameRect.left) / frameRect.width;
+                const yCorner = (event.clientY - frameRect.top) / frameRect.height;
+
                 const corner = document.createElement('div');
                 corner.className = 'corner';
-                corner.style.left = (x * 100) + '%';
-                corner.style.top = (y * 100) + '%';
+                corner.id = 'corner' + selectedCorner;
+                corner.style.left = (xCorner * 100) + '%';
+                corner.style.top = (yCorner * 100) + '%';
                 frameContainer.appendChild(corner);
-                
-                corners.push({x: x, y: y});
-                console.log(`Corner ${corners.length} added: (${x.toFixed(4)}, ${y.toFixed(4)})`);
+
+                corners.push({ id: selectedCorner, x: x, y: y });
+                console.log(`Corner ${selectedCorner} added: (${x.toFixed(4)}, ${y.toFixed(4)})`);
+
+                // Disabilita il pulsante dopo aver selezionato il punto
+                document.getElementById(selectedCorner).disabled = true;
+                selectedCorner = null; // Deseleziona l'angolo
+            } else if (!selectedCorner) {
+                alert('Please select a corner from the court image first.');
             }
         });
 
+        document.querySelectorAll('.corner-button').forEach(button => {
+            // Gestore per il clic sinistro (seleziona l'angolo)
+            button.addEventListener('click', function() {
+                selectedCorner = button.id;
+                console.log(`Selected ${selectedCorner}`);
+            });
+        
+            // Gestore per il clic destro (rimuove il punto)
+            button.addEventListener('contextmenu', function(event) {
+                event.preventDefault(); // Previene il menu contestuale standard
+        
+                const cornerId = 'corner' + button.id;
+                const cornerElement = document.getElementById(cornerId);
+        
+                // Rimuovi l'elemento corner dal DOM
+                if (cornerElement) {
+                    cornerElement.remove();
+                }
+        
+                // Rimuovi il punto dall'array corners
+                corners = corners.filter(corner => corner.id !== button.id);
+        
+                // Riabilita il pulsante
+                button.disabled = false;
+                selectedCorner = null; // Deseleziona l'angolo
+                console.log(`Corner ${cornerId} removed`);
+            });
+        });
+
         document.getElementById('save-corners').addEventListener('click', function() {
-            if (corners.length !== num_corners) {
-                alert(`Please select all 16 corners. Current count: ${corners.length}`);
+            if (corners.length < minNumCorners) {
+                alert(`Please select at least ${numCorners} corners. Current count: ${corners.length}`);
                 return;
             }
 
@@ -72,7 +156,7 @@
                     'Content-Type': 'application/json',
                     'X-CSRFToken': '{{ csrf_token }}',
                 },
-                body: JSON.stringify({corners: corners}),
+                body: JSON.stringify({ corners: corners }),
             })
             .then(response => response.json())
             .then(data => {
@@ -94,6 +178,9 @@
             corners = [];
             const existingCorners = frameContainer.querySelectorAll('.corner');
             existingCorners.forEach(corner => corner.remove());
+            document.querySelectorAll('.corner-button').forEach(button => {
+                button.disabled = false;
+            });
             console.log('Corners reset');
         });
     </script>

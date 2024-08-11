@@ -97,26 +97,16 @@ def get_corners(corners: list):
         'P7': middle_bottom,
     }
 
-def draw_points(frame, top_left, bottom_right, bottom_left, top_right, middle_top, middle_bottom):
+def draw_points(frame, corners: dict):
     
-    cv2.circle(frame, (top_left["x"], top_left["y"]), 10, (255, 0, 0), -1)
-    cv2.circle(frame, (bottom_right["x"], bottom_right["y"]), 10, (0, 0, 0), -1)
-    cv2.circle(frame, (bottom_left["x"], bottom_left["y"]), 10, (0, 255, 0), -1)
-    cv2.circle(frame, (top_right["x"], top_right["y"]), 10, (0, 0, 255), -1)
-
-    cv2.circle(frame, (middle_top["x"], middle_top["y"]), 10, (127, 127, 127), -1)
-    cv2.circle(frame, (middle_bottom["x"], middle_bottom["y"]), 10, (255, 255, 255), -1)
-
-    cv2.line(frame, (top_left["x"], top_left["y"]), (top_right["x"], top_right["y"]), (0, 255, 0), 2)
-    cv2.line(frame, (top_right["x"], top_right["y"]), (bottom_right["x"], bottom_right["y"]), (0, 255, 0), 2)
-    cv2.line(frame, (bottom_right["x"], bottom_right["y"]), (bottom_left["x"], bottom_left["y"]), (0, 255, 0), 2)
-    cv2.line(frame, (bottom_left["x"], bottom_left["y"]), (top_left["x"], top_left["y"]), (0, 255, 0), 2)
-    
+    for id, corner in corners.items():
+        cv2.circle(frame, (corner['x'], corner['y']), 10, (0, 255, 0), -1)
+        cv2.putText(frame, id, (corner['x'], corner['y']), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
 
 
-def feet(n, foot):
-    return int(n * foot)
+def feet(n, foot, inches=0):
+    return int(n * foot + inches * foot / 12)
 
 def draw_lines(frame):
     h, w = frame.shape[:2]
@@ -153,7 +143,7 @@ def draw_lines(frame):
     ]
     cv2.line(frame, three_point_line_left[0], three_point_line_left[1], (0, 255, 0), 2)
     cv2.line(frame, three_point_line_left[2], three_point_line_left[3], (0, 255, 0), 2)
-    cv2.ellipse(frame, rim_left[0], (feet(24, foot), feet(24, foot)), 0, -72, 70, (0, 255, 0), 2)
+    cv2.ellipse(frame, rim_left[0], (feet(23, foot, 9), feet(23, foot, 9)), 0, -72, 70, (0, 255, 0), 2)
 
     rim_right = [(w - feet(4, foot), int(h * 0.5))]
     cv2.circle(frame, rim_right[0], 10, (255, 255, 0), -1)
@@ -165,4 +155,41 @@ def draw_lines(frame):
         ]
     cv2.line(frame, three_point_line_right[0], three_point_line_right[1], (0, 255, 0), 2)
     cv2.line(frame, three_point_line_right[2], three_point_line_right[3], (0, 255, 0), 2)
-    cv2.ellipse(frame, rim_right[0], (feet(24, foot), feet(24, foot)), 0, 110, 250, (0, 255, 0), 2)
+    cv2.ellipse(frame, rim_right[0], (feet(23, foot, 9), feet(23, foot, 9)), 0, 110, 250, (0, 255, 0), 2)
+
+
+def corner_pos(id: str, w, h):
+
+    foot1 = h / 50
+    foot2 = w / 94
+    foot = (foot1 + foot2) / 2
+
+    if id == 'P0':
+        return 0, 0
+    if id == 'P1':
+        return 0, int(h * 0.5) - feet(8, foot)
+    if id == 'P2':
+        return 0, int(h * 0.5) + feet(8, foot)
+    if id == 'P3':
+        return 0, h
+    if id == 'P4':
+        return 0 + feet(19, foot), int(h * 0.5) - feet(8, foot)
+    if id == 'P5':
+        return 0 + feet(19, foot), int(h * 0.5) +  feet(8,foot)
+    if id == 'P6':
+        return w // 2, 0
+    if id == 'P7':
+        return w // 2, h
+    if id == 'P8':
+        return w, 0
+    if id == 'P9':
+        return w, int(h * 0.5) - feet(8, foot)
+    if id == 'P10':
+        return w, int(h * 0.5) + feet(8, foot)
+    if id == 'P11':
+        return w, h
+    if id == 'P12':
+        return w - feet(19, foot), int(h * 0.5) - feet(8, foot)
+    if id == 'P13':
+        return w - feet(19, foot), int(h * 0.5) + feet(8, foot)
+    return 0, 0

@@ -8,6 +8,8 @@
 <body>
     <h1>Vista dall'alto</h1>
     <a href="{% url 'home_page' %}">Torna alla home</a>
+    <a href="{% url 'mask' game.id %}">Maschera</a>
+    <a href="{% url 'select_corners' game.id %}">Riseleziona gli angoli</a>
     <img src="{{ top_view_url }}" alt="Vista dall'alto">
 </body>
 </html>

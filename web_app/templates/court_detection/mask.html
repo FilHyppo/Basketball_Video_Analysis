@@ -1,0 +1,42 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maschera</title></head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+<body>
+    <div class="container">
+        <h1>Mask</h1>
+        <img src="{{ mask_url }}" alt="Mask">
+        <a href="{% url 'top_view' game.id %}">TOP VIEW</a>
+        <a href="{% url 'home_page' %}">Torna alla home</a>
+    </div>
+</body>
+</html>
