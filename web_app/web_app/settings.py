@@ -131,3 +131,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA = "media/"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_TEMP = MEDIA_ROOT / "temp"
+
+RANDOM_FRAME = False
+
+NUM_CORNERS = 15 #Numero di angoli presi in considerazione per le omografie del campo
+
+# Parametri per la panormaica del campo
+NUM_FRAMES = 10
+DIFF_BW_FRAMES = 10
+
+TOP_VIEW_WIDTH = 1920
+TOP_VIEW_HEIGHT = 1080

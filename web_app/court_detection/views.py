@@ -6,7 +6,7 @@ from .forms import BasketballGameForm
 from .models import BasketballGame
 import cv2
 import os
-from . import utils
+from . import utils, court_drawings, geometry
 import json
 import numpy as np
 import random
@@ -43,12 +43,19 @@ def select_corners(request, game_id):
     game = get_object_or_404(BasketballGame, id=game_id)
     video_path = os.path.join(settings.MEDIA_ROOT, game.video.name)
 
-    # Estrai un frame in posizione random
     cap = cv2.VideoCapture(video_path)
-    n = random.randint(0, cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    if settings.RANDOM_FRAME:
+        # Estrai un frame in posizione random
+        n = random.randint(0, cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    else:
+        n = 0
+    
+    game.n = n
+    game.save()
     cap.set(cv2.CAP_PROP_POS_FRAMES, n)
     ret, frame = cap.read()
     cap.release()
+
 
     #if not ret:
     #    return render(request, 'yourapp/error.html', {'message': 'Could not read video frame.'})
@@ -65,6 +72,25 @@ def select_corners(request, game_id):
 
     return render(request, 'court_detection/select_corners.html', {'game': game, 'frame_url': frame_url})
 
+def new_frame(request, game_id):
+    game = get_object_or_404(BasketballGame, id=game_id)
+    video_path = game.video.path
+    cap = cv2.VideoCapture(video_path)
+    
+    cap.set(cv2.CAP_PROP_POS_FRAMES, game.n + 5)
+    ret, frame = cap.read()
+    if game.distortion_parameters['fx']:
+        frame = utils.undistort_frame(frame, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+    
+    frame_path = os.path.join(settings.MEDIA_ROOT, 'frames', f'frame_{game_id}.jpg')
+    os.makedirs(os.path.dirname(frame_path), exist_ok=True)
+    cv2.imwrite(frame_path, frame)
+    game.n += 5
+    game.save()
+    return JsonResponse({'status': 'success'})
+    
+
+
 @csrf_exempt
 def save_corners(request, game_id):
     if request.method == 'POST':
@@ -72,11 +98,11 @@ def save_corners(request, game_id):
         try:
             data = json.loads(request.body)
             corners = data.get('corners')
-            print("corners", corners)
             if not corners or len(corners) < 4:
                 return JsonResponse({'status': 'error', 'message': f'Invalid number of corners. Expected 6, got {len(corners)}'})
             
             cap = cv2.VideoCapture(game.video.path)
+            cap.set(cv2.CAP_PROP_POS_FRAMES, game.n)
             ret, frame = cap.read()
             cap.release()
             h, w = frame.shape[:2]
@@ -85,7 +111,9 @@ def save_corners(request, game_id):
             for corner in corners:
                 new_corners[str(corner['id'])] =  {'x': int(corner['x'] * w), 'y': int(corner['y'] * h)} 
             
-            game.corners = new_corners
+            new_corners = geometry.enhance_corners(frame, new_corners) #################################################################################
+
+            game.corners = utils.find_missing_corners(frame, new_corners)
             game.save()
             
             return JsonResponse({'status': 'success'})
@@ -98,56 +126,19 @@ def save_corners(request, game_id):
 
 def top_view(request, game_id):
     game = get_object_or_404(BasketballGame, id=game_id)
-    video_path = game.video.path
     output_path = os.path.join(settings.MEDIA_ROOT, 'top_views', f'top_view_{game_id}.jpg')
-    output_path_undistort_frame = os.path.join(settings.MEDIA_ROOT, 'top_views', f'undistorted_{game_id}.jpg')
-    output_path_distorted_frame = os.path.join(settings.MEDIA_ROOT, 'top_views', f'distorted_{game_id}.jpg')
     
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     frame_path = os.path.join(settings.MEDIA_ROOT, 'frames', f'frame_{game_id}.jpg')
     frame = cv2.imread(frame_path)
 
-    #print("middle_top", middle_top)
-    #print("middle_bottom", middle_bottom)
-#
-    #print("top_left", top_left)
-    #print("bottom_right", bottom_right)
-    #print("bottom_left", bottom_left)
-    #print("top_right", top_right)
+    frame_top_view = utils.top_view(frame, game.corners)
 
-    undistort_frame = frame
-    
-    #utils.draw_points(undistort_frame, game.corners)
-    cv2.imwrite(output_path_undistort_frame, undistort_frame)
+    frame_top_view = cv2.resize(frame_top_view, (settings.TOP_VIEW_WIDTH, settings.TOP_VIEW_HEIGHT))
 
-    h, w = undistort_frame.shape[:2]
-    h, w = h // 2, w // 2
-    src = []
-    dst = []
-    points_names = []
+    court_drawings.draw_court_lines(frame_top_view)
 
-    for id, corner in game.corners.items():
-        src.append([corner['x'], corner['y']])
-        dst.append([utils.corner_pos(id, w, h)])
-        points_names.append(id)
-        #print("Uso il punto", id, "con coordinate", corner)
-
-    points = np.array(src, dtype=np.float32)
-    points = points.reshape(-1, 1, 2)
-
-    dst = np.array(dst, dtype=np.float32)
-    dst = dst.reshape(-1, 1, 2)
-    
-
-
-    M, status = cv2.findHomography(points, dst)
-    
-    frame_top_view = cv2.warpPerspective(undistort_frame, M, (w, h))
-
-    #utils.draw_lines(frame_top_view)
-
-    #print("Salvo top view in: ", output_path)
     cv2.imwrite(output_path, frame_top_view)
     output_url = os.path.join(settings.MEDIA_URL, 'top_views', f'top_view_{game_id}.jpg')
     return render(request, 'court_detection/top_view.html', {'game': game, 'top_view_url': output_url})
@@ -164,32 +155,142 @@ def mask(request, game_id):
     top_view_path = os.path.join(settings.MEDIA_ROOT, 'top_views', f'top_view_{game_id}.jpg')
     top_view = cv2.imread(top_view_path)
 
-    h, w = top_view.shape[:2]
-
-    src = []
-    dst = []
-    points_names = []
-
-    for id, corner in game.corners.items():
-        dst.append([corner['x'], corner['y']])
-        src.append([utils.corner_pos(id, w, h)])
-        points_names.append(id)
-        
-
-    points = np.array(src, dtype=np.float32)
-    points = points.reshape(-1, 1, 2)
-
-    dst = np.array(dst, dtype=np.float32)
-    dst = dst.reshape(-1, 1, 2)
-
-    print("Punti sorgenti:", points)
-    print("Punti destinazione:", dst)
-
-    M, status = cv2.findHomography(points, dst)
-
-    mask = cv2.warpPerspective(top_view, M, (W, H))
+    mask = utils.top_view(top_view, game.corners, inverse=True)
 
     output_path = os.path.join(settings.MEDIA_ROOT, 'masks', f'mask_{game_id}.jpg')
     cv2.imwrite(output_path, mask)
     mask_url = os.path.join(settings.MEDIA_URL, 'masks', f'mask_{game_id}.jpg')
     return render(request, 'court_detection/mask.html', {'game': game, 'mask_url': mask_url})
+
+#TODO: CERCA DI STIMARE L'OPTICAL FLOW TRA I FRAME IN VIDEO IN CUI SI MUOVE LA TELECAMERA
+def next_frame(request, game_id):
+    game = get_object_or_404(BasketballGame, id=game_id)
+    video_path = game.video.path
+    n = game.n
+
+    cap = cv2.VideoCapture(video_path)
+    cap.set(cv2.CAP_PROP_POS_FRAMES, n)
+    ret, base = cap.read()
+    if game.distortion_parameters['fx']:
+        base = utils.undistort_frame(base, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+    new_corners = game.corners
+    output_image = base
+
+    NUM_FRAMES = settings.NUM_FRAMES
+    DIFF_BW_FRAMES = settings.DIFF_BW_FRAMES
+
+    for i in range(1, NUM_FRAMES):
+        cap.set(cv2.CAP_PROP_POS_FRAMES, n + i*DIFF_BW_FRAMES)
+        ret, frame = cap.read()
+        if game.distortion_parameters['fx']:
+            frame = utils.undistort_frame(frame, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+        if not ret:
+            break
+        output_image, new_corners = utils.landscape(output_image, frame, new_corners)
+        cv2.imwrite(os.path.join(settings.MEDIA_ROOT, f'frame_{game_id}_{i}.jpg'), output_image)
+    
+    cap.release()
+
+
+    court_drawings.draw_points(output_image, new_corners)
+    #court_drawings.draw_lines(output_image, new_corners)
+
+    top_output_image = utils.top_view(output_image, new_corners)
+
+    output_path = os.path.join(settings.MEDIA_ROOT, 'next_frames', f'next_frame_{game_id}.jpg')
+    cv2.imwrite(output_path, output_image)
+    next_frame_url = os.path.join(settings.MEDIA_URL, 'next_frames', f'next_frame_{game_id}.jpg')
+    top_output_path = os.path.join(settings.MEDIA_ROOT, 'next_frames', f'top_next_frame_{game_id}.jpg')
+    cv2.imwrite(top_output_path, top_output_image)
+    top_next_frame_url = os.path.join(settings.MEDIA_URL, 'next_frames', f'top_next_frame_{game_id}.jpg')
+    return render(request, 'court_detection/next_frame.html', {'game': game, 
+                                                               'next_frame_url': next_frame_url, 
+                                                               'top_next_frame_url': top_next_frame_url})
+
+
+def next_frame2(request, game_id, num_frames):
+    game = get_object_or_404(BasketballGame, id=game_id)
+    video_path = game.video.path
+    n = game.n
+
+    cap = cv2.VideoCapture(video_path)
+    cap.set(cv2.CAP_PROP_POS_FRAMES, n)
+    ret, base = cap.read()
+    if game.distortion_parameters['fx']:
+        base = utils.undistort_frame(base, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+    
+    prev_corners = game.corners
+    cur_corners = game.corners
+    prev = base
+    cur = base
+
+    DIFF_BW_FRAMES = settings.DIFF_BW_FRAMES
+    stop = num_frames // DIFF_BW_FRAMES
+
+    base_path = os.path.join(settings.MEDIA_ROOT, 'next_frames', f'game{game_id}')
+    base_url = os.path.join(settings.MEDIA_URL, 'next_frames', f'game{game_id}')
+
+    top_view = utils.top_view(base, prev_corners)
+
+    for i in range(1, stop + 1):
+        cap.set(cv2.CAP_PROP_POS_FRAMES, n + i*DIFF_BW_FRAMES)
+        ret, cur = cap.read()
+        if game.distortion_parameters['fx']:
+            cur = utils.undistort_frame(cur, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+        if not ret:
+            break
+        cur_corners = utils.new_corners(prev, cur, prev_corners)
+
+        copy = cur.copy()
+        court_drawings.draw_points(copy, cur_corners)
+        out_path = os.path.join(base_path, f'frame_{n + i*  DIFF_BW_FRAMES}.jpg')
+        cv2.imwrite(out_path, copy)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+
+        top_cur = utils.top_view(cur, cur_corners)
+        mask = (top_cur.sum(axis=2) > 0).astype(np.uint8) * 255
+        mask = cv2.bitwise_not(mask)
+        top_view = cv2.bitwise_and(top_view, top_view, mask=mask)
+        top_view = cv2.add(top_view, top_cur)
+
+        prev_corners = cur_corners
+        prev = cur
+
+
+    if num_frames != stop * DIFF_BW_FRAMES:
+        cap.set(cv2.CAP_PROP_POS_FRAMES, n + num_frames)
+        ret, cur = cap.read()
+        cur_corners = utils.new_corners(prev, cur, prev_corners)
+
+        top_cur = utils.top_view(cur, cur_corners)
+        mask = (top_cur.sum(axis=2) > 0).astype(np.uint8) * 255
+        mask = cv2.bitwise_not(mask)
+        top_view = cv2.bitwise_and(top_view, top_view, mask=mask)
+        top_view = cv2.add(top_view, top_cur)
+
+    cap.release()
+    
+    court_drawings.draw_points(cur, cur_corners)
+
+    court_drawings.draw_court_lines(top_view)
+
+    landscape = utils.top_view(top_view, cur_corners, inverse=True, new_h=2160, new_w=3840)
+
+    output_path = os.path.join(base_path, f'next_frame_{game_id}.jpg')
+    cv2.imwrite(output_path, cur)
+    next_frame_url = os.path.join(base_url, f'next_frame_{game_id}.jpg')
+    top_output_path = os.path.join(base_path, f'top_next_frame_{game_id}.jpg')
+    cv2.imwrite(top_output_path, top_view)
+    top_next_frame_url = os.path.join(base_url, f'top_next_frame_{game_id}.jpg')
+
+    landscape_output_path = os.path.join(base_path, f'landscape_{game_id}.jpg')
+    cv2.imwrite(landscape_output_path, landscape)
+    landscape_url = os.path.join(base_url, f'landscape_{game_id}.jpg')
+
+    return render(request, 'court_detection/next_frame.html', {'game': game, 
+                                                               'next_frame_url': next_frame_url, 
+                                                               'top_next_frame_url': top_next_frame_url,
+                                                               'landscape_url': landscape_url})
+
+
+#TODO: per rilevare grossi cambiamenti usare l'istogramma colori

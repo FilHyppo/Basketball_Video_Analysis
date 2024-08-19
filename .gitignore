@@ -1,10 +1,12 @@
 venv/
 datasets/
+/web_app/db.sqlite3
+/web_app/media/videos/
+web_app/db.sqlite3
+/web_app/media/**
 
 # Ignore Python cache directories
 __pycache__/
 **/__pycache__/
-/web_app/db.sqlite3
-/web_app/media
-web_app/db.sqlite3
-/web_app/media
+input_videos/tosti.mp4
+input_videos/olympics.mp4

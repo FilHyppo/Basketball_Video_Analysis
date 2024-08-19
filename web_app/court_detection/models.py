@@ -7,5 +7,7 @@ class BasketballGame(models.Model):
     distortion_parameters = models.JSONField(default=dict)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
+    n = models.IntegerField(default=0) # frame number showd to the user when selecting the corners
+
     def __str__(self):
         return f"Game {self.id}"

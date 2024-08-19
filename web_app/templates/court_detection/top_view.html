@@ -10,6 +10,7 @@
     <a href="{% url 'home_page' %}">Torna alla home</a>
     <a href="{% url 'mask' game.id %}">Maschera</a>
     <a href="{% url 'select_corners' game.id %}">Riseleziona gli angoli</a>
+    <a href="{% url 'next_frame' game.id %}">Prossimo frame</a>
     <img src="{{ top_view_url }}" alt="Vista dall'alto">
 </body>
 </html>

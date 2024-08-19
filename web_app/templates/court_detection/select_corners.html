@@ -16,8 +16,8 @@
             width: 100%;
         }
         .corner {
-            width: 5px;
-            height: 5px;
+            width: 2px;
+            height: 2px;
             background: red;
             position: absolute;
             border-radius: 50%;
@@ -59,10 +59,12 @@
                 <button id="P11" class="corner-button" style="top:89%; left: 90.5%;"></button>
                 <button id="P12" class="corner-button" style="top: 32%; left: 72.5%;"></button>
                 <button id="P13" class="corner-button" style="top: 59.5%; left: 72.5%;"></button>
+                <button id="P14" class="corner-button" style="top: 45.5%; left: 47%;"></button>
             </div>
         </div>
         <button id="save-corners" class="btn btn-success btn-block mt-4">Save Corners</button>
         <button id="reset-corners" class="btn btn-danger btn-block mt-2">Reset Corners</button>
+        <button id="next-frame" class="btn btn-primary btn-block mt-2">Next Frame</button>
     </div>
 
     <script>
@@ -72,6 +74,8 @@
         let selectedCorner = null;
         const numCorners = 14;
         const minNumCorners = 4;
+
+        let num_frame = 0;
 
         // Calcola le dimensioni e la posizione del frame
         function updateFrameSize() {
@@ -105,8 +109,12 @@
                 corners.push({ id: selectedCorner, x: x, y: y });
                 console.log(`Corner ${selectedCorner} added: (${x.toFixed(4)}, ${y.toFixed(4)})`);
 
-                // Disabilita il pulsante dopo aver selezionato il punto
                 document.getElementById(selectedCorner).disabled = true;
+                button = document.getElementById(selectedCorner);
+                //Metti il bottone rosso
+                button.style.borderColor = 'red';
+                
+                // Disabilita il pulsante dopo aver selezionato il punto
                 selectedCorner = null; // Deseleziona l'angolo
             } else if (!selectedCorner) {
                 alert('Please select a corner from the court image first.');
@@ -137,6 +145,8 @@
         
                 // Riabilita il pulsante
                 button.disabled = false;
+                button.style.borderColor = 'blue';
+
                 selectedCorner = null; // Deseleziona l'angolo
                 console.log(`Corner ${cornerId} removed`);
             });
@@ -180,8 +190,33 @@
             existingCorners.forEach(corner => corner.remove());
             document.querySelectorAll('.corner-button').forEach(button => {
                 button.disabled = false;
+                button.style.borderColor = 'blue';
             });
             console.log('Corners reset');
+        });
+
+        document.getElementById('next-frame').addEventListener('click', function() {
+            fetch("{% url 'new_frame' game.id %}", {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                num_frame += 1;
+                if (data.status === 'success') {
+                    // Refresha l'immagine
+                    frame.src = frame.src + '?reload=' + new Date().getTime();
+                } else {
+                    alert('Failed to load the next frame: ' + (data.message || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while loading the next frame.');
+            });
         });
     </script>
 </body>

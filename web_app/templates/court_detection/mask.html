@@ -37,6 +37,8 @@
         <img src="{{ mask_url }}" alt="Mask">
         <a href="{% url 'top_view' game.id %}">TOP VIEW</a>
         <a href="{% url 'home_page' %}">Torna alla home</a>
+        <a href="{% url 'next_frame' game.id %}">Prossimo frame</a>
+        <a href="{% url 'next_frames' game.id 10 %}">Prossimi 10 frame</a>
     </div>
 </body>
 </html>
