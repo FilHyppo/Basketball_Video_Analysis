@@ -211,29 +211,64 @@ def next_frame(request, game_id):
 def next_frame2(request, game_id, num_frames):
     game = get_object_or_404(BasketballGame, id=game_id)
     video_path = game.video.path
-    n = game.n
+    game_n = game.n
+    n = None
+    prev_corners = None
+    cap = None
+    corners_positions = dict()
 
-    cap = cv2.VideoCapture(video_path)
-    cap.set(cv2.CAP_PROP_POS_FRAMES, n)
-    ret, base = cap.read()
-    if game.distortion_parameters['fx']:
-        base = utils.undistort_frame(base, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+    # DIrectory in cui salvare i frame
+    base_path = os.path.join(settings.MEDIA_ROOT, 'next_frames', f'game{game_id}')
+    base_url = os.path.join(settings.MEDIA_URL, 'next_frames', f'game{game_id}')
+    if not os.path.exists(base_path):
+        os.makedirs(base_path, exist_ok=True)
+
+    # Frame già salvati
+    file_names = os.listdir(base_path)
+    file_names = [int(f.split('_')[-1].split('.')[0]) for f in file_names if f.startswith('frame_')]
+    file_names = [f for f in file_names if f <= game_n + num_frames]
+    if file_names:
+        # Il numero più vicino e inferiore a game_n + num_frames
+        n = max(file_names)
+
+    # Prendo il frame più vicino a quello richiesto, ma solo se ci sono anche i suoi corners salvati
+    if n is not None:
+        base = cv2.imread(os.path.join(base_path, f'frame_{n}.jpg'))
+        if os.path.exists(os.path.join(base_path, f'corners_positions.json')):
+            with open(os.path.join(base_path, f'corners_positions.json'), 'r') as f:
+                try:
+                    corners_positions = json.load(f)
+                    prev_corners = corners_positions[str(n)]
+                    num_frames = game_n + num_frames - n
+                    print("Trovato il frame già salvato:", n, ", me ne mancano ", num_frames)
+                    print("Corners trovati:", prev_corners)
+                except Exception as e:
+                    prev_corners = None
+                
     
-    prev_corners = game.corners
-    cur_corners = game.corners
+    # Se non ho trovati i corner o prorpio non c'erano frame salvati parto da game_n (quello usato dall'utente per scegliere i corners)
+    if prev_corners is None:
+        print("Parto da game_n")
+        n = game_n
+        cap = cv2.VideoCapture(video_path)
+        cap.set(cv2.CAP_PROP_POS_FRAMES, game_n)
+        ret, base = cap.read()
+        if game.distortion_parameters['fx']:
+            base = utils.undistort_frame(base, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
+        prev_corners = game.corners     
+
+    top_view = utils.top_view(base, prev_corners)
+    
     prev = base
-    cur = base
+    corners_positions[n] = prev_corners
+    cur = prev
+    cur_corners = prev_corners
 
     DIFF_BW_FRAMES = settings.DIFF_BW_FRAMES
     stop = num_frames // DIFF_BW_FRAMES
-
-    base_path = os.path.join(settings.MEDIA_ROOT, 'next_frames', f'game{game_id}')
-    base_url = os.path.join(settings.MEDIA_URL, 'next_frames', f'game{game_id}')
-
-    top_view = utils.top_view(base, prev_corners)
-
     for i in range(1, stop + 1):
-        cap.set(cv2.CAP_PROP_POS_FRAMES, n + i*DIFF_BW_FRAMES)
+        frame_id = n + i*DIFF_BW_FRAMES
+        cap.set(cv2.CAP_PROP_POS_FRAMES, frame_id)
         ret, cur = cap.read()
         if game.distortion_parameters['fx']:
             cur = utils.undistort_frame(cur, utils.camera_matrix(game.distortion_parameters), utils.dist_coeffs(game.distortion_parameters))
@@ -241,9 +276,10 @@ def next_frame2(request, game_id, num_frames):
             break
         cur_corners = utils.new_corners(prev, cur, prev_corners)
 
+        corners_positions[frame_id] = cur_corners
+
         copy = cur.copy()
-        court_drawings.draw_points(copy, cur_corners)
-        out_path = os.path.join(base_path, f'frame_{n + i*  DIFF_BW_FRAMES}.jpg')
+        out_path = os.path.join(base_path, f'frame_{frame_id}.jpg')
         cv2.imwrite(out_path, copy)
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
@@ -258,9 +294,20 @@ def next_frame2(request, game_id, num_frames):
 
 
     if num_frames != stop * DIFF_BW_FRAMES:
-        cap.set(cv2.CAP_PROP_POS_FRAMES, n + num_frames)
+        frame_id = n + num_frames
+        if cap is None:
+            cap = cv2.VideoCapture(video_path)
+        cap.set(cv2.CAP_PROP_POS_FRAMES, frame_id)
         ret, cur = cap.read()
         cur_corners = utils.new_corners(prev, cur, prev_corners)
+
+        corners_positions[frame_id] = cur_corners
+
+        copy = cur.copy()
+        out_path = os.path.join(base_path, f'frame_{frame_id}.jpg')
+        cv2.imwrite(out_path, copy)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+
 
         top_cur = utils.top_view(cur, cur_corners)
         mask = (top_cur.sum(axis=2) > 0).astype(np.uint8) * 255
@@ -268,7 +315,12 @@ def next_frame2(request, game_id, num_frames):
         top_view = cv2.bitwise_and(top_view, top_view, mask=mask)
         top_view = cv2.add(top_view, top_cur)
 
-    cap.release()
+    if cap:
+        cap.release()
+
+    with open(os.path.join(base_path, f'corners_positions.json'), 'w') as f:
+        json.dump(corners_positions, f)
+
     
     court_drawings.draw_points(cur, cur_corners)
 
@@ -291,6 +343,11 @@ def next_frame2(request, game_id, num_frames):
                                                                'next_frame_url': next_frame_url, 
                                                                'top_next_frame_url': top_next_frame_url,
                                                                'landscape_url': landscape_url})
+
+#TODO: FAI Sì CHE utils.new_corners avverta se diminuire il numero di frame tra cur e prev
+#TODO: CONTROLLARE SE IN /media/next_frames/ ci sono già frame salvati da cui partire
+
+
 
 
 #TODO: per rilevare grossi cambiamenti usare l'istogramma colori

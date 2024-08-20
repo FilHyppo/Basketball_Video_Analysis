@@ -37,6 +37,13 @@ def enhance_corners(frame, corners):
     for points in lines:
           # Extracted points nested in the list
         x1,y1,x2,y2=points[0]
+        #keep only horizontal or vertical lines
+        dx = abs(x2 - x1)
+        dy = abs(y2 -y1)
+        if dx != 0:
+            m = dy / dx
+            if 0.1 < m < 10:
+                continue
         # Draw line over the frame
         cv2.line(img,(x1,y1),(x2,y2),(0,255,0),2)
         for id, corner in corners.items():

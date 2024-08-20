@@ -547,8 +547,8 @@ def new_corners(frame1, frame2, corners):
     new_corners = {}
     for id, corner in corners.items():
         new_corner = cv2.perspectiveTransform(np.array([[[corner['x'], corner['y']]]], dtype=np.float32), M)[0][0]
-        new_corner = np.round(new_corner).astype(np.int32)
-        new_corners[id] = {'x': new_corner[0], 'y': new_corner[1]}
+        new_corner = np.round(new_corner)
+        new_corners[id] = {'x': int(new_corner[0]), 'y': int(new_corner[1])}
 
     frame1_warped = cv2.warpPerspective(frame1, M, (frame2.shape[1], frame2.shape[0]))
     court_drawings.draw_points(frame1_warped, new_corners)

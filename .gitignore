@@ -10,3 +10,5 @@ __pycache__/
 **/__pycache__/
 input_videos/tosti.mp4
 input_videos/olympics.mp4
+web_app/db.sqlite3
+/web_app/media/top_views
