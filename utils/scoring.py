@@ -110,12 +110,12 @@ class BasketballScoreDetector:
         if 'base_frame' in kwargs:
             self._init_single_frame_detector(kwargs['base_frame'], kwargs['hoop_regions'], kwargs.get('verbose', False), kwargs.get('threshold', 25))
         elif 'video_path' in kwargs:
-            self._init_full_detector(kwargs['video_path'], kwargs['output_path_color'], kwargs.get('hoop_regions', []), kwargs.get('output_path_gray', None), kwargs.get('verbose', False), kwargs.get('threshold', 25))
+            self._init_full_detector(kwargs['video_path'], kwargs['output_path_color'], kwargs.get('hoop_regions', []), kwargs.get('output_path_gray', None), kwargs.get('verbose', False),kwargs.get('output_txt', None),kwargs.get('threshold', 25))
         else:
             raise ValueError("Invalid arguments passed to BasketballHoopDetector")
 
 
-    def _init_full_detector(self, video_path, output_path_color, hoop_regions, output_path_gray=None, verbose=False, threshold=10):
+    def _init_full_detector(self, video_path, output_path_color, hoop_regions, output_path_gray=None, verbose=False,  output_txt=None, threshold=25,):
         self.verbose = verbose
         self.threshold = threshold
         self.video_path = video_path
@@ -137,7 +137,12 @@ class BasketballScoreDetector:
         
         self.states = [State() for _ in self.hoop_regions]
         self.frame_count = 0
+        
+        self.output_file = None
+        if output_txt is not None:
+            self.output_file = open(output_txt, 'w')  # Apre il file in modalità scrittura
         self._initialize_base_frame()
+        
 
     def _init_single_frame_detector(self, base_frame, hoop_regions, verbose=False, threshold=25):
         self.verbose = verbose
@@ -185,7 +190,6 @@ class BasketballScoreDetector:
         frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         frame_gray = cv2.GaussianBlur(frame_gray, (5, 5), 0)        
         frame_diff = cv2.absdiff(frame_gray, self.base_frame_gray)
-        
         _, binary_diff = cv2.threshold(frame_diff, self.threshold, 255, cv2.THRESH_BINARY)
 
         
@@ -259,15 +263,22 @@ class BasketballScoreDetector:
         self.output_video.release()
         if self.output_video_gray:
             self.output_video_gray.release()
+        if self.output_file:
+            self.output_file.close()
         cv2.destroyAllWindows()
 
     def run(self):
+        frame_count = 0
         while self.video_capture.isOpened():
             ret, frame = self.video_capture.read()
             if not ret:
                 break
             
             self.process_frame(frame)
+            if self.output_file:
+                self.output_file.write(f"{frame_count},{self.states[0].score},{self.states[1].score}\n")
+
+            frame_count+=1
         
         self._release_resources()
 

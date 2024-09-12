@@ -12,6 +12,7 @@ import numpy as np
 import random
 
 def home_page(request):
+    print(os.path.abspath(__file__))
     return render(request, 'court_detection/home.html')
 
 

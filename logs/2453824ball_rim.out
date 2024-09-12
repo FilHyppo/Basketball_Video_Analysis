@@ -1,0 +1,2 @@
+Errore: Devi fornire esattamente 2 parametri.
+Utilizzo: /var/lib/slurm/slurmd/job2453824/slurm_script input_video_path output_dir_path

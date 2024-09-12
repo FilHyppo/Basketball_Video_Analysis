@@ -39,34 +39,40 @@ class RimDetector:
         
         for c in range(grid_cols-1):
             for r in range(grid_rows-2):
-                y1 = r * grid_image_height
-                y2 = (r + 3) * grid_image_height
-                x1 = c * grid_image_width
-                x2 = (c + 2) * grid_image_width
+                im_y1 = r * grid_image_height
+                im_y2 = (r + 3) * grid_image_height
+                im_x1 = c * grid_image_width
+                im_x2 = (c + 2) * grid_image_width
+                window_width = grid_image_width * 2
+                window_height = grid_image_height * 3
 
-                crop_img = image[y1:y2, x1:x2].copy()
+                crop_img = image[im_y1:im_y2, im_x1:im_x2].copy()
                 result = self.model.predict(crop_img, save=False, show_labels=False, conf=0.3)
 
-                if len(result[0].boxes) == 0:
-                    continue
+                if len(result[0].boxes.cls == 0) == 0:
+                    pass
                 else:
-                    box = result[0].boxes[0]
+                    rim_boxes = result[0].boxes[result[0].boxes.cls == 0]
+                    box = rim_boxes[0]
                     x1, y1, x2, y2 = map(int, box.xyxy[0])  
                     conf = box.conf[0]  
                     label = f'{conf:.2f}'
                     if conf > 0.4 :
-                        if c- prec_col >2:
-                            hoops_boxes.append([])
-                            hoops_boxes[-1].append([x1+grid_image_width*c, y1+r*grid_image_height, x2+grid_image_width*c, y2+r*grid_image_height, conf])
-                            prec_col = c
+                        if x1 < window_width/10 or  y1 < window_height/10 or x2 > window_width*9/10 or y2 > window_height*9/10:
+                            cv2.putText(crop_img, "skipped", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
                         else:
-                            hoops_boxes[-1].append([x1+grid_image_width*c, y1+r*grid_image_height, x2+grid_image_width*c, y2+r*grid_image_height,conf])
-                            prec_col = c
+                            if c- prec_col >2:
+                                hoops_boxes.append([])
+                                hoops_boxes[-1].append([x1+grid_image_width*c, y1+r*grid_image_height, x2+grid_image_width*c, y2+r*grid_image_height, conf])
+                                prec_col = c
+                            else:
+                                hoops_boxes[-1].append([x1+grid_image_width*c, y1+r*grid_image_height, x2+grid_image_width*c, y2+r*grid_image_height,conf])
+                                prec_col = c
 
-                if verbose:
-                    cv2.rectangle(crop_img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                    cv2.putText(crop_img, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-                    cv2.imwrite(f'./outputs/rims/rim_out{r}_{c}.jpg', crop_img)
+                    if verbose:
+                        cv2.rectangle(crop_img, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                        cv2.putText(crop_img, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                cv2.imwrite(f'./outputs/rims/rim_out{r}_{c}.jpg', crop_img)
 
         return get_rims_wavg(hoops_boxes)
 

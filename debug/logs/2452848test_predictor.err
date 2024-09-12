@@ -1,0 +1,685 @@
+
+WARNING ⚠️ NMS time limit 0.650s exceeded
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 (no detections), 1389.9ms
+Speed: 23.3ms preprocess, 463.3ms inference, 1343.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 77.4ms
+Speed: 2.9ms preprocess, 25.8ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 77.4ms
+Speed: 1.5ms preprocess, 25.8ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 2 rims, 77.0ms
+Speed: 1.0ms preprocess, 25.7ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 2 rims, 63.9ms
+Speed: 1.0ms preprocess, 21.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 2 rims, 67.4ms
+Speed: 1.0ms preprocess, 22.5ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 1 ball, 2 rims, 63.5ms
+Speed: 1.0ms preprocess, 21.2ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 61.5ms
+Speed: 1.0ms preprocess, 20.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 62.8ms
+Speed: 1.0ms preprocess, 20.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 64.7ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 67.2ms
+Speed: 1.0ms preprocess, 22.4ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 64.1ms
+Speed: 1.0ms preprocess, 21.4ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 2 rims, 64.0ms
+Speed: 1.0ms preprocess, 21.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 64.2ms
+Speed: 1.1ms preprocess, 21.4ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 1 ball, 2 rims, 65.1ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 1 ball, 2 rims, 64.1ms
+Speed: 1.0ms preprocess, 21.4ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 64.1ms
+Speed: 1.0ms preprocess, 21.4ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 2 rims, 64.8ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 ball, 2 rims, 65.0ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 1 ball, 1 rim, 64.0ms
+Speed: 1.6ms preprocess, 21.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 64.2ms
+Speed: 1.0ms preprocess, 21.4ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 65.0ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 64.3ms
+Speed: 1.0ms preprocess, 21.4ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 64.2ms
+Speed: 1.0ms preprocess, 21.4ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 68.3ms
+Speed: 1.0ms preprocess, 22.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 64.4ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 64.2ms
+Speed: 1.0ms preprocess, 21.4ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 64.5ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 64.6ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 65.3ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 rim, 64.6ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 64.6ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.6ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.1ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.4ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.0ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.8ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.9ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 64.7ms
+Speed: 1.1ms preprocess, 21.6ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.6ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.0ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 (no detections), 64.4ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.0ms
+Speed: 1.2ms preprocess, 21.3ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.9ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.7ms
+Speed: 1.5ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 64.5ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.7ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 64.7ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 64.7ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.8ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 64.5ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 1 ball, 65.0ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 ball, 65.0ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 1 ball, 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 1 ball, 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.8ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.6ms
+Speed: 1.0ms preprocess, 21.5ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.1ms preprocess, 21.9ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.9ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 (no detections), 64.8ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.1ms preprocess, 21.9ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.7ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.8ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.8ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.1ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 1 ball, 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.7ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 64.7ms
+Speed: 1.0ms preprocess, 21.6ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 68.7ms
+Speed: 1.0ms preprocess, 22.9ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 (no detections), 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.1ms preprocess, 21.8ms inference, 0.3ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 1 ball, 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 2: 640x640 (no detections), 66.1ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.2ms
+Speed: 1.1ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.1ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.1ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.1ms
+Speed: 1.1ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.1ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 1 ball, 65.1ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.3ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.1ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.4ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 1 ball, 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 1 ball, 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.5ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.1ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.1ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 69.7ms
+Speed: 1.0ms preprocess, 23.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.2ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 2: 640x640 (no detections), 65.0ms
+Speed: 1.0ms preprocess, 21.7ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.3ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.6ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.6ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.6ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.3ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 2 balls, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.5ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 2 balls, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 1.1ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.0ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.0ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 2 balls, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.6ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.3ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 2 balls, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 2 balls, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.0ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 2 balls, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.6ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 2 balls, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.4ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.4ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.3ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.6ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.0ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 2 balls, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.5ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.0ms
+Speed: 1.1ms preprocess, 22.0ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.0ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.6ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 2.2ms preprocess, 21.8ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 ball, 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 67.0ms
+Speed: 1.0ms preprocess, 22.3ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.7ms
+Speed: 1.1ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.4ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.3ms
+Speed: 2.2ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.9ms
+Speed: 1.2ms preprocess, 22.0ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.8ms
+Speed: 1.1ms preprocess, 22.3ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.0ms
+Speed: 1.2ms preprocess, 21.7ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.6ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 65.5ms
+Speed: 1.0ms preprocess, 21.8ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 (no detections), 2: 640x640 (no detections), 66.3ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 1 rim, 2: 640x640 (no detections), 69.8ms
+Speed: 1.0ms preprocess, 23.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 1 rim, 2: 640x640 (no detections), 66.1ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 1 rim, 2: 640x640 (no detections), 66.2ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 1 rim, 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 1 rim, 2: 640x640 (no detections), 66.8ms
+Speed: 1.1ms preprocess, 22.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 ball, 1 rim, 2: 640x640 (no detections), 65.9ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.1ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.8ms
+Speed: 1.0ms preprocess, 22.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.8ms
+Speed: 1.0ms preprocess, 22.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.4ms
+Speed: 1.0ms preprocess, 22.1ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 1 ball, 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.7ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.7ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.1ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.0ms
+Speed: 1.0ms preprocess, 22.0ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 67.0ms
+Speed: 1.0ms preprocess, 22.3ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 65.8ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.5ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 66.7ms
+Speed: 1.0ms preprocess, 22.2ms inference, 0.6ms postprocess per image at shape (1, 3, 640, 640)
+
+0: 640x640 1 rim, 1: 640x640 1 rim, 2: 640x640 (no detections), 65.7ms
+Speed: 1.0ms preprocess, 21.9ms inference, 0.5ms postprocess per image at shape (1, 3, 640, 640)

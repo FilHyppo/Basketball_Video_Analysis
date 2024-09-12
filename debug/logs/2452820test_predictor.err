@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/work/cvcs2024/Basketball_Video_Analysis/repo/Basketball_Video_Analysis/debug/test_rim_ball_detections.py", line 1, in <module>
+    from utils.rim_ball_detection import RimBallDetector
+ModuleNotFoundError: No module named 'utils'

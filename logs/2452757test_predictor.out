@@ -1,0 +1,1808 @@
+Modello caricato su: cuda
+Tempo di caricamento del modello YOLO: 8.077726 secondi
+Tempo prima di iniziare a scorrere i frames: 2.423400 secondi
+Tempo per leggere un frame dal video: 0.331880 secondi
+Processato il frame 1/900
+Tempo per leggere un frame dal video: 0.004982 secondi
+Processato il frame 2/900
+Tempo per leggere un frame dal video: 0.002190 secondi
+Processato il frame 3/900
+Tempo per leggere un frame dal video: 0.001920 secondi
+Processato il frame 4/900
+Tempo per leggere un frame dal video: 0.001890 secondi
+Processato il frame 5/900
+Tempo per leggere un frame dal video: 0.001693 secondi
+Processato il frame 6/900
+Tempo per leggere un frame dal video: 0.002329 secondi
+Processato il frame 7/900
+Tempo per leggere un frame dal video: 0.001700 secondi
+Processato il frame 8/900
+Tempo per leggere un frame dal video: 0.001758 secondi
+Processato il frame 9/900
+Tempo per leggere un frame dal video: 0.001744 secondi
+Processato il frame 10/900
+Tempo per leggere un frame dal video: 0.001746 secondi
+Processato il frame 11/900
+Tempo per leggere un frame dal video: 0.001745 secondi
+Processato il frame 12/900
+Tempo per leggere un frame dal video: 0.002254 secondi
+Processato il frame 13/900
+Tempo per leggere un frame dal video: 0.002185 secondi
+Processato il frame 14/900
+Tempo per leggere un frame dal video: 0.001802 secondi
+Processato il frame 15/900
+Tempo per leggere un frame dal video: 0.001663 secondi
+Processato il frame 16/900
+Tempo per leggere un frame dal video: 0.001716 secondi
+Processato il frame 17/900
+Tempo per leggere un frame dal video: 0.001793 secondi
+Processato il frame 18/900
+Tempo per leggere un frame dal video: 0.002351 secondi
+Processato il frame 19/900
+Tempo per leggere un frame dal video: 0.001696 secondi
+Processato il frame 20/900
+Tempo per leggere un frame dal video: 0.001749 secondi
+Processato il frame 21/900
+Tempo per leggere un frame dal video: 0.001668 secondi
+Processato il frame 22/900
+Tempo per leggere un frame dal video: 0.002256 secondi
+Processato il frame 23/900
+Tempo per leggere un frame dal video: 0.001671 secondi
+Processato il frame 24/900
+Tempo per leggere un frame dal video: 0.002271 secondi
+Processato il frame 25/900
+Tempo per leggere un frame dal video: 0.001722 secondi
+Processato il frame 26/900
+Tempo per leggere un frame dal video: 0.001786 secondi
+Processato il frame 27/900
+Tempo per leggere un frame dal video: 0.001666 secondi
+Processato il frame 28/900
+Tempo per leggere un frame dal video: 0.001672 secondi
+Processato il frame 29/900
+Tempo per leggere un frame dal video: 0.001769 secondi
+Processato il frame 30/900
+Tempo per leggere un frame dal video: 0.002344 secondi
+Processato il frame 31/900
+Tempo per leggere un frame dal video: 0.001723 secondi
+Processato il frame 32/900
+Tempo per leggere un frame dal video: 0.002193 secondi
+Processato il frame 33/900
+Tempo per leggere un frame dal video: 0.001667 secondi
+Processato il frame 34/900
+Tempo per leggere un frame dal video: 0.001800 secondi
+Processato il frame 35/900
+Tempo per leggere un frame dal video: 0.001664 secondi
+Processato il frame 36/900
+Tempo per leggere un frame dal video: 0.002325 secondi
+Processato il frame 37/900
+Tempo per leggere un frame dal video: 0.001753 secondi
+Processato il frame 38/900
+Tempo per leggere un frame dal video: 0.001819 secondi
+Processato il frame 39/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 40/900
+Tempo per leggere un frame dal video: 0.001733 secondi
+Processato il frame 41/900
+Tempo per leggere un frame dal video: 0.001664 secondi
+Processato il frame 42/900
+Tempo per leggere un frame dal video: 0.002768 secondi
+Processato il frame 43/900
+Tempo per leggere un frame dal video: 0.001691 secondi
+Processato il frame 44/900
+Tempo per leggere un frame dal video: 0.001698 secondi
+Processato il frame 45/900
+Tempo per leggere un frame dal video: 0.001662 secondi
+Processato il frame 46/900
+Tempo per leggere un frame dal video: 0.001781 secondi
+Processato il frame 47/900
+Tempo per leggere un frame dal video: 0.001666 secondi
+Processato il frame 48/900
+Tempo per leggere un frame dal video: 0.002325 secondi
+Processato il frame 49/900
+Tempo per leggere un frame dal video: 0.001780 secondi
+Processato il frame 50/900
+Tempo per leggere un frame dal video: 0.001781 secondi
+Processato il frame 51/900
+Tempo per leggere un frame dal video: 0.002363 secondi
+Processato il frame 52/900
+Tempo per leggere un frame dal video: 0.001812 secondi
+Processato il frame 53/900
+Tempo per leggere un frame dal video: 0.001731 secondi
+Processato il frame 54/900
+Tempo per leggere un frame dal video: 0.002322 secondi
+Processato il frame 55/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 56/900
+Tempo per leggere un frame dal video: 0.001696 secondi
+Processato il frame 57/900
+Tempo per leggere un frame dal video: 0.001694 secondi
+Processato il frame 58/900
+Tempo per leggere un frame dal video: 0.001807 secondi
+Processato il frame 59/900
+Tempo per leggere un frame dal video: 0.001699 secondi
+Processato il frame 60/900
+Tempo per leggere un frame dal video: 0.002274 secondi
+Processato il frame 61/900
+Tempo per leggere un frame dal video: 0.001729 secondi
+Processato il frame 62/900
+Tempo per leggere un frame dal video: 0.002912 secondi
+Processato il frame 63/900
+Tempo per leggere un frame dal video: 0.001866 secondi
+Processato il frame 64/900
+Tempo per leggere un frame dal video: 0.001813 secondi
+Processato il frame 65/900
+Tempo per leggere un frame dal video: 0.001720 secondi
+Processato il frame 66/900
+Tempo per leggere un frame dal video: 0.002360 secondi
+Processato il frame 67/900
+Tempo per leggere un frame dal video: 0.001705 secondi
+Processato il frame 68/900
+Tempo per leggere un frame dal video: 0.001698 secondi
+Processato il frame 69/900
+Tempo per leggere un frame dal video: 0.001736 secondi
+Processato il frame 70/900
+Tempo per leggere un frame dal video: 0.001740 secondi
+Processato il frame 71/900
+Tempo per leggere un frame dal video: 0.001664 secondi
+Processato il frame 72/900
+Tempo per leggere un frame dal video: 0.002274 secondi
+Processato il frame 73/900
+Tempo per leggere un frame dal video: 0.001669 secondi
+Processato il frame 74/900
+Tempo per leggere un frame dal video: 0.002310 secondi
+Processato il frame 75/900
+Tempo per leggere un frame dal video: 0.001668 secondi
+Processato il frame 76/900
+Tempo per leggere un frame dal video: 0.001666 secondi
+Processato il frame 77/900
+Tempo per leggere un frame dal video: 0.001752 secondi
+Processato il frame 78/900
+Tempo per leggere un frame dal video: 0.002343 secondi
+Processato il frame 79/900
+Tempo per leggere un frame dal video: 0.001680 secondi
+Processato il frame 80/900
+Tempo per leggere un frame dal video: 0.001734 secondi
+Processato il frame 81/900
+Tempo per leggere un frame dal video: 0.001757 secondi
+Processato il frame 82/900
+Tempo per leggere un frame dal video: 0.001835 secondi
+Processato il frame 83/900
+Tempo per leggere un frame dal video: 0.001831 secondi
+Processato il frame 84/900
+Tempo per leggere un frame dal video: 0.002282 secondi
+Processato il frame 85/900
+Tempo per leggere un frame dal video: 0.002621 secondi
+Processato il frame 86/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 87/900
+Tempo per leggere un frame dal video: 0.001690 secondi
+Processato il frame 88/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 89/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 90/900
+Tempo per leggere un frame dal video: 0.002466 secondi
+Processato il frame 91/900
+Tempo per leggere un frame dal video: 0.001801 secondi
+Processato il frame 92/900
+Tempo per leggere un frame dal video: 0.001747 secondi
+Processato il frame 93/900
+Tempo per leggere un frame dal video: 0.001678 secondi
+Processato il frame 94/900
+Tempo per leggere un frame dal video: 0.001800 secondi
+Processato il frame 95/900
+Tempo per leggere un frame dal video: 0.001715 secondi
+Processato il frame 96/900
+Tempo per leggere un frame dal video: 0.003008 secondi
+Processato il frame 97/900
+Tempo per leggere un frame dal video: 0.001676 secondi
+Processato il frame 98/900
+Tempo per leggere un frame dal video: 0.001841 secondi
+Processato il frame 99/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 100/900
+Tempo per leggere un frame dal video: 0.001717 secondi
+Processato il frame 101/900
+Tempo per leggere un frame dal video: 0.001675 secondi
+Processato il frame 102/900
+Tempo per leggere un frame dal video: 0.002394 secondi
+Processato il frame 103/900
+Tempo per leggere un frame dal video: 0.001827 secondi
+Processato il frame 104/900
+Tempo per leggere un frame dal video: 0.001717 secondi
+Processato il frame 105/900
+Tempo per leggere un frame dal video: 0.002592 secondi
+Processato il frame 106/900
+Tempo per leggere un frame dal video: 0.001965 secondi
+Processato il frame 107/900
+Tempo per leggere un frame dal video: 0.001885 secondi
+Processato il frame 108/900
+Tempo per leggere un frame dal video: 0.002264 secondi
+Processato il frame 109/900
+Tempo per leggere un frame dal video: 0.001733 secondi
+Processato il frame 110/900
+Tempo per leggere un frame dal video: 0.001801 secondi
+Processato il frame 111/900
+Tempo per leggere un frame dal video: 0.001798 secondi
+Processato il frame 112/900
+Tempo per leggere un frame dal video: 0.001674 secondi
+Processato il frame 113/900
+Tempo per leggere un frame dal video: 0.001804 secondi
+Processato il frame 114/900
+Tempo per leggere un frame dal video: 0.002596 secondi
+Processato il frame 115/900
+Tempo per leggere un frame dal video: 0.002340 secondi
+Processato il frame 116/900
+Tempo per leggere un frame dal video: 0.001661 secondi
+Processato il frame 117/900
+Tempo per leggere un frame dal video: 0.002106 secondi
+Processato il frame 118/900
+Tempo per leggere un frame dal video: 0.001852 secondi
+Processato il frame 119/900
+Tempo per leggere un frame dal video: 0.001770 secondi
+Processato il frame 120/900
+Tempo per leggere un frame dal video: 0.002228 secondi
+Processato il frame 121/900
+Tempo per leggere un frame dal video: 0.001731 secondi
+Processato il frame 122/900
+Tempo per leggere un frame dal video: 0.001805 secondi
+Processato il frame 123/900
+Tempo per leggere un frame dal video: 0.001808 secondi
+Processato il frame 124/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 125/900
+Tempo per leggere un frame dal video: 0.001702 secondi
+Processato il frame 126/900
+Tempo per leggere un frame dal video: 0.002394 secondi
+Processato il frame 127/900
+Tempo per leggere un frame dal video: 0.002198 secondi
+Processato il frame 128/900
+Tempo per leggere un frame dal video: 0.001732 secondi
+Processato il frame 129/900
+Tempo per leggere un frame dal video: 0.001704 secondi
+Processato il frame 130/900
+Tempo per leggere un frame dal video: 0.001752 secondi
+Processato il frame 131/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 132/900
+Tempo per leggere un frame dal video: 0.002215 secondi
+Processato il frame 133/900
+Tempo per leggere un frame dal video: 0.001723 secondi
+Processato il frame 134/900
+Tempo per leggere un frame dal video: 0.001797 secondi
+Processato il frame 135/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 136/900
+Tempo per leggere un frame dal video: 0.001667 secondi
+Processato il frame 137/900
+Tempo per leggere un frame dal video: 0.002663 secondi
+Processato il frame 138/900
+Tempo per leggere un frame dal video: 0.002388 secondi
+Processato il frame 139/900
+Tempo per leggere un frame dal video: 0.001761 secondi
+Processato il frame 140/900
+Tempo per leggere un frame dal video: 0.001657 secondi
+Processato il frame 141/900
+Tempo per leggere un frame dal video: 0.001669 secondi
+Processato il frame 142/900
+Tempo per leggere un frame dal video: 0.001797 secondi
+Processato il frame 143/900
+Tempo per leggere un frame dal video: 0.001724 secondi
+Processato il frame 144/900
+Tempo per leggere un frame dal video: 0.002259 secondi
+Processato il frame 145/900
+Tempo per leggere un frame dal video: 0.002247 secondi
+Processato il frame 146/900
+Tempo per leggere un frame dal video: 0.001805 secondi
+Processato il frame 147/900
+Tempo per leggere un frame dal video: 0.001699 secondi
+Processato il frame 148/900
+Tempo per leggere un frame dal video: 0.001704 secondi
+Processato il frame 149/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 150/900
+Tempo per leggere un frame dal video: 0.002325 secondi
+Processato il frame 151/900
+Tempo per leggere un frame dal video: 0.001676 secondi
+Processato il frame 152/900
+Tempo per leggere un frame dal video: 0.001652 secondi
+Processato il frame 153/900
+Tempo per leggere un frame dal video: 0.001719 secondi
+Processato il frame 154/900
+Tempo per leggere un frame dal video: 0.001805 secondi
+Processato il frame 155/900
+Tempo per leggere un frame dal video: 0.001730 secondi
+Processato il frame 156/900
+Tempo per leggere un frame dal video: 0.002768 secondi
+Processato il frame 157/900
+Tempo per leggere un frame dal video: 0.001726 secondi
+Processato il frame 158/900
+Tempo per leggere un frame dal video: 0.001805 secondi
+Processato il frame 159/900
+Tempo per leggere un frame dal video: 0.001680 secondi
+Processato il frame 160/900
+Tempo per leggere un frame dal video: 0.001714 secondi
+Processato il frame 161/900
+Tempo per leggere un frame dal video: 0.001759 secondi
+Processato il frame 162/900
+Tempo per leggere un frame dal video: 0.002336 secondi
+Processato il frame 163/900
+Tempo per leggere un frame dal video: 0.001806 secondi
+Processato il frame 164/900
+Tempo per leggere un frame dal video: 0.001670 secondi
+Processato il frame 165/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 166/900
+Tempo per leggere un frame dal video: 0.002236 secondi
+Processato il frame 167/900
+Tempo per leggere un frame dal video: 0.001672 secondi
+Processato il frame 168/900
+Tempo per leggere un frame dal video: 0.002269 secondi
+Processato il frame 169/900
+Tempo per leggere un frame dal video: 0.001725 secondi
+Processato il frame 170/900
+Tempo per leggere un frame dal video: 0.001803 secondi
+Processato il frame 171/900
+Tempo per leggere un frame dal video: 0.001759 secondi
+Processato il frame 172/900
+Tempo per leggere un frame dal video: 0.001766 secondi
+Processato il frame 173/900
+Tempo per leggere un frame dal video: 0.001706 secondi
+Processato il frame 174/900
+Tempo per leggere un frame dal video: 0.002374 secondi
+Processato il frame 175/900
+Tempo per leggere un frame dal video: 0.002928 secondi
+Processato il frame 176/900
+Tempo per leggere un frame dal video: 0.001865 secondi
+Processato il frame 177/900
+Tempo per leggere un frame dal video: 0.001840 secondi
+Processato il frame 178/900
+Tempo per leggere un frame dal video: 0.001971 secondi
+Processato il frame 179/900
+Tempo per leggere un frame dal video: 0.001694 secondi
+Processato il frame 180/900
+Tempo per leggere un frame dal video: 0.002270 secondi
+Processato il frame 181/900
+Tempo per leggere un frame dal video: 0.001804 secondi
+Processato il frame 182/900
+Tempo per leggere un frame dal video: 0.001754 secondi
+Processato il frame 183/900
+Tempo per leggere un frame dal video: 0.001811 secondi
+Processato il frame 184/900
+Tempo per leggere un frame dal video: 0.001808 secondi
+Processato il frame 185/900
+Tempo per leggere un frame dal video: 0.001686 secondi
+Processato il frame 186/900
+Tempo per leggere un frame dal video: 0.002343 secondi
+Processato il frame 187/900
+Tempo per leggere un frame dal video: 0.002810 secondi
+Processato il frame 188/900
+Tempo per leggere un frame dal video: 0.001718 secondi
+Processato il frame 189/900
+Tempo per leggere un frame dal video: 0.001703 secondi
+Processato il frame 190/900
+Tempo per leggere un frame dal video: 0.001742 secondi
+Processato il frame 191/900
+Tempo per leggere un frame dal video: 0.001811 secondi
+Processato il frame 192/900
+Tempo per leggere un frame dal video: 0.002282 secondi
+Processato il frame 193/900
+Tempo per leggere un frame dal video: 0.001667 secondi
+Processato il frame 194/900
+Tempo per leggere un frame dal video: 0.001784 secondi
+Processato il frame 195/900
+Tempo per leggere un frame dal video: 0.001726 secondi
+Processato il frame 196/900
+Tempo per leggere un frame dal video: 0.002148 secondi
+Processato il frame 197/900
+Tempo per leggere un frame dal video: 0.001657 secondi
+Processato il frame 198/900
+Tempo per leggere un frame dal video: 0.002410 secondi
+Processato il frame 199/900
+Tempo per leggere un frame dal video: 0.001741 secondi
+Processato il frame 200/900
+Tempo per leggere un frame dal video: 0.001740 secondi
+Processato il frame 201/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 202/900
+Tempo per leggere un frame dal video: 0.001815 secondi
+Processato il frame 203/900
+Tempo per leggere un frame dal video: 0.001786 secondi
+Processato il frame 204/900
+Tempo per leggere un frame dal video: 0.002281 secondi
+Processato il frame 205/900
+Tempo per leggere un frame dal video: 0.002276 secondi
+Processato il frame 206/900
+Tempo per leggere un frame dal video: 0.001781 secondi
+Processato il frame 207/900
+Tempo per leggere un frame dal video: 0.001758 secondi
+Processato il frame 208/900
+Tempo per leggere un frame dal video: 0.001766 secondi
+Processato il frame 209/900
+Tempo per leggere un frame dal video: 0.001696 secondi
+Processato il frame 210/900
+Tempo per leggere un frame dal video: 0.002408 secondi
+Processato il frame 211/900
+Tempo per leggere un frame dal video: 0.001690 secondi
+Processato il frame 212/900
+Tempo per leggere un frame dal video: 0.001690 secondi
+Processato il frame 213/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 214/900
+Tempo per leggere un frame dal video: 0.001849 secondi
+Processato il frame 215/900
+Tempo per leggere un frame dal video: 0.001857 secondi
+Processato il frame 216/900
+Tempo per leggere un frame dal video: 0.002928 secondi
+Processato il frame 217/900
+Tempo per leggere un frame dal video: 0.001748 secondi
+Processato il frame 218/900
+Tempo per leggere un frame dal video: 0.001830 secondi
+Processato il frame 219/900
+Tempo per leggere un frame dal video: 0.001690 secondi
+Processato il frame 220/900
+Tempo per leggere un frame dal video: 0.001795 secondi
+Processato il frame 221/900
+Tempo per leggere un frame dal video: 0.001686 secondi
+Processato il frame 222/900
+Tempo per leggere un frame dal video: 0.002379 secondi
+Processato il frame 223/900
+Tempo per leggere un frame dal video: 0.001697 secondi
+Processato il frame 224/900
+Tempo per leggere un frame dal video: 0.001756 secondi
+Processato il frame 225/900
+Tempo per leggere un frame dal video: 0.002137 secondi
+Processato il frame 226/900
+Tempo per leggere un frame dal video: 0.001834 secondi
+Processato il frame 227/900
+Tempo per leggere un frame dal video: 0.001851 secondi
+Processato il frame 228/900
+Tempo per leggere un frame dal video: 0.002277 secondi
+Processato il frame 229/900
+Tempo per leggere un frame dal video: 0.001712 secondi
+Processato il frame 230/900
+Tempo per leggere un frame dal video: 0.001803 secondi
+Processato il frame 231/900
+Tempo per leggere un frame dal video: 0.001754 secondi
+Processato il frame 232/900
+Tempo per leggere un frame dal video: 0.002590 secondi
+Processato il frame 233/900
+Tempo per leggere un frame dal video: 0.001664 secondi
+Processato il frame 234/900
+Tempo per leggere un frame dal video: 0.002369 secondi
+Processato il frame 235/900
+Tempo per leggere un frame dal video: 0.001669 secondi
+Processato il frame 236/900
+Tempo per leggere un frame dal video: 0.001652 secondi
+Processato il frame 237/900
+Tempo per leggere un frame dal video: 0.001774 secondi
+Processato il frame 238/900
+Tempo per leggere un frame dal video: 0.001815 secondi
+Processato il frame 239/900
+Tempo per leggere un frame dal video: 0.001695 secondi
+Processato il frame 240/900
+Tempo per leggere un frame dal video: 0.002272 secondi
+Processato il frame 241/900
+Tempo per leggere un frame dal video: 0.001800 secondi
+Processato il frame 242/900
+Tempo per leggere un frame dal video: 0.001801 secondi
+Processato il frame 243/900
+Tempo per leggere un frame dal video: 0.002741 secondi
+Processato il frame 244/900
+Tempo per leggere un frame dal video: 0.001752 secondi
+Processato il frame 245/900
+Tempo per leggere un frame dal video: 0.001676 secondi
+Processato il frame 246/900
+Tempo per leggere un frame dal video: 0.002358 secondi
+Processato il frame 247/900
+Tempo per leggere un frame dal video: 0.002189 secondi
+Processato il frame 248/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 249/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 250/900
+Tempo per leggere un frame dal video: 0.001797 secondi
+Processato il frame 251/900
+Tempo per leggere un frame dal video: 0.001669 secondi
+Processato il frame 252/900
+Tempo per leggere un frame dal video: 0.002274 secondi
+Processato il frame 253/900
+Tempo per leggere un frame dal video: 0.001699 secondi
+Processato il frame 254/900
+Tempo per leggere un frame dal video: 0.001736 secondi
+Processato il frame 255/900
+Tempo per leggere un frame dal video: 0.001705 secondi
+Processato il frame 256/900
+Tempo per leggere un frame dal video: 0.001675 secondi
+Processato il frame 257/900
+Tempo per leggere un frame dal video: 0.002173 secondi
+Processato il frame 258/900
+Tempo per leggere un frame dal video: 0.002376 secondi
+Processato il frame 259/900
+Tempo per leggere un frame dal video: 0.001720 secondi
+Processato il frame 260/900
+Tempo per leggere un frame dal video: 0.001715 secondi
+Processato il frame 261/900
+Tempo per leggere un frame dal video: 0.001670 secondi
+Processato il frame 262/900
+Tempo per leggere un frame dal video: 0.001833 secondi
+Processato il frame 263/900
+Tempo per leggere un frame dal video: 0.001719 secondi
+Processato il frame 264/900
+Tempo per leggere un frame dal video: 0.002279 secondi
+Processato il frame 265/900
+Tempo per leggere un frame dal video: 0.002141 secondi
+Processato il frame 266/900
+Tempo per leggere un frame dal video: 0.001787 secondi
+Processato il frame 267/900
+Tempo per leggere un frame dal video: 0.001659 secondi
+Processato il frame 268/900
+Tempo per leggere un frame dal video: 0.001721 secondi
+Processato il frame 269/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 270/900
+Tempo per leggere un frame dal video: 0.002378 secondi
+Processato il frame 271/900
+Tempo per leggere un frame dal video: 0.001685 secondi
+Processato il frame 272/900
+Tempo per leggere un frame dal video: 0.001722 secondi
+Processato il frame 273/900
+Tempo per leggere un frame dal video: 0.001685 secondi
+Processato il frame 274/900
+Tempo per leggere un frame dal video: 0.002259 secondi
+Processato il frame 275/900
+Tempo per leggere un frame dal video: 0.001689 secondi
+Processato il frame 276/900
+Tempo per leggere un frame dal video: 0.002229 secondi
+Processato il frame 277/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 278/900
+Tempo per leggere un frame dal video: 0.001740 secondi
+Processato il frame 279/900
+Tempo per leggere un frame dal video: 0.001677 secondi
+Processato il frame 280/900
+Tempo per leggere un frame dal video: 0.001710 secondi
+Processato il frame 281/900
+Tempo per leggere un frame dal video: 0.001674 secondi
+Processato il frame 282/900
+Tempo per leggere un frame dal video: 0.002382 secondi
+Processato il frame 283/900
+Tempo per leggere un frame dal video: 0.002250 secondi
+Processato il frame 284/900
+Tempo per leggere un frame dal video: 0.001776 secondi
+Processato il frame 285/900
+Tempo per leggere un frame dal video: 0.001700 secondi
+Processato il frame 286/900
+Tempo per leggere un frame dal video: 0.001819 secondi
+Processato il frame 287/900
+Tempo per leggere un frame dal video: 0.001769 secondi
+Processato il frame 288/900
+Tempo per leggere un frame dal video: 0.002275 secondi
+Processato il frame 289/900
+Tempo per leggere un frame dal video: 0.001741 secondi
+Processato il frame 290/900
+Tempo per leggere un frame dal video: 0.001767 secondi
+Processato il frame 291/900
+Tempo per leggere un frame dal video: 0.002512 secondi
+Processato il frame 292/900
+Tempo per leggere un frame dal video: 0.001921 secondi
+Processato il frame 293/900
+Tempo per leggere un frame dal video: 0.001693 secondi
+Processato il frame 294/900
+Tempo per leggere un frame dal video: 0.002370 secondi
+Processato il frame 295/900
+Tempo per leggere un frame dal video: 0.001704 secondi
+Processato il frame 296/900
+Tempo per leggere un frame dal video: 0.001740 secondi
+Processato il frame 297/900
+Tempo per leggere un frame dal video: 0.001712 secondi
+Processato il frame 298/900
+Tempo per leggere un frame dal video: 0.001826 secondi
+Processato il frame 299/900
+Tempo per leggere un frame dal video: 0.001705 secondi
+Processato il frame 300/900
+Tempo per leggere un frame dal video: 0.002785 secondi
+Processato il frame 301/900
+Tempo per leggere un frame dal video: 0.001662 secondi
+Processato il frame 302/900
+Tempo per leggere un frame dal video: 0.001776 secondi
+Processato il frame 303/900
+Tempo per leggere un frame dal video: 0.001660 secondi
+Processato il frame 304/900
+Tempo per leggere un frame dal video: 0.001676 secondi
+Processato il frame 305/900
+Tempo per leggere un frame dal video: 0.001782 secondi
+Processato il frame 306/900
+Tempo per leggere un frame dal video: 0.002380 secondi
+Processato il frame 307/900
+Tempo per leggere un frame dal video: 0.001716 secondi
+Processato il frame 308/900
+Tempo per leggere un frame dal video: 0.002453 secondi
+Processato il frame 309/900
+Tempo per leggere un frame dal video: 0.001779 secondi
+Processato il frame 310/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 311/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 312/900
+Tempo per leggere un frame dal video: 0.002223 secondi
+Processato il frame 313/900
+Tempo per leggere un frame dal video: 0.001706 secondi
+Processato il frame 314/900
+Tempo per leggere un frame dal video: 0.001791 secondi
+Processato il frame 315/900
+Tempo per leggere un frame dal video: 0.001701 secondi
+Processato il frame 316/900
+Tempo per leggere un frame dal video: 0.001775 secondi
+Processato il frame 317/900
+Tempo per leggere un frame dal video: 0.002243 secondi
+Processato il frame 318/900
+Tempo per leggere un frame dal video: 0.002426 secondi
+Processato il frame 319/900
+Tempo per leggere un frame dal video: 0.001666 secondi
+Processato il frame 320/900
+Tempo per leggere un frame dal video: 0.001662 secondi
+Processato il frame 321/900
+Tempo per leggere un frame dal video: 0.001785 secondi
+Processato il frame 322/900
+Tempo per leggere un frame dal video: 0.001815 secondi
+Processato il frame 323/900
+Tempo per leggere un frame dal video: 0.001669 secondi
+Processato il frame 324/900
+Tempo per leggere un frame dal video: 0.002285 secondi
+Processato il frame 325/900
+Tempo per leggere un frame dal video: 0.002406 secondi
+Processato il frame 326/900
+Tempo per leggere un frame dal video: 0.001820 secondi
+Processato il frame 327/900
+Tempo per leggere un frame dal video: 0.001749 secondi
+Processato il frame 328/900
+Tempo per leggere un frame dal video: 0.001721 secondi
+Processato il frame 329/900
+Tempo per leggere un frame dal video: 0.001734 secondi
+Processato il frame 330/900
+Tempo per leggere un frame dal video: 0.002469 secondi
+Processato il frame 331/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 332/900
+Tempo per leggere un frame dal video: 0.001767 secondi
+Processato il frame 333/900
+Tempo per leggere un frame dal video: 0.001658 secondi
+Processato il frame 334/900
+Tempo per leggere un frame dal video: 0.002249 secondi
+Processato il frame 335/900
+Tempo per leggere un frame dal video: 0.001713 secondi
+Processato il frame 336/900
+Tempo per leggere un frame dal video: 0.002289 secondi
+Processato il frame 337/900
+Tempo per leggere un frame dal video: 0.001682 secondi
+Processato il frame 338/900
+Tempo per leggere un frame dal video: 0.001779 secondi
+Processato il frame 339/900
+Tempo per leggere un frame dal video: 0.001718 secondi
+Processato il frame 340/900
+Tempo per leggere un frame dal video: 0.001736 secondi
+Processato il frame 341/900
+Tempo per leggere un frame dal video: 0.001673 secondi
+Processato il frame 342/900
+Tempo per leggere un frame dal video: 0.003336 secondi
+Processato il frame 343/900
+Tempo per leggere un frame dal video: 0.001661 secondi
+Processato il frame 344/900
+Tempo per leggere un frame dal video: 0.001718 secondi
+Processato il frame 345/900
+Tempo per leggere un frame dal video: 0.001710 secondi
+Processato il frame 346/900
+Tempo per leggere un frame dal video: 0.001799 secondi
+Processato il frame 347/900
+Tempo per leggere un frame dal video: 0.001748 secondi
+Processato il frame 348/900
+Tempo per leggere un frame dal video: 0.002263 secondi
+Processato il frame 349/900
+Tempo per leggere un frame dal video: 0.001769 secondi
+Processato il frame 350/900
+Tempo per leggere un frame dal video: 0.001817 secondi
+Processato il frame 351/900
+Tempo per leggere un frame dal video: 0.002025 secondi
+Processato il frame 352/900
+Tempo per leggere un frame dal video: 0.001668 secondi
+Processato il frame 353/900
+Tempo per leggere un frame dal video: 0.001708 secondi
+Processato il frame 354/900
+Tempo per leggere un frame dal video: 0.002370 secondi
+Processato il frame 355/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 356/900
+Tempo per leggere un frame dal video: 0.002262 secondi
+Processato il frame 357/900
+Tempo per leggere un frame dal video: 0.001654 secondi
+Processato il frame 358/900
+Tempo per leggere un frame dal video: 0.001822 secondi
+Processato il frame 359/900
+Tempo per leggere un frame dal video: 0.001786 secondi
+Processato il frame 360/900
+Tempo per leggere un frame dal video: 0.002269 secondi
+Processato il frame 361/900
+Tempo per leggere un frame dal video: 0.001700 secondi
+Processato il frame 362/900
+Tempo per leggere un frame dal video: 0.001809 secondi
+Processato il frame 363/900
+Tempo per leggere un frame dal video: 0.001733 secondi
+Processato il frame 364/900
+Tempo per leggere un frame dal video: 0.001667 secondi
+Processato il frame 365/900
+Tempo per leggere un frame dal video: 0.001666 secondi
+Processato il frame 366/900
+Tempo per leggere un frame dal video: 0.002895 secondi
+Processato il frame 367/900
+Tempo per leggere un frame dal video: 0.001712 secondi
+Processato il frame 368/900
+Tempo per leggere un frame dal video: 0.001723 secondi
+Processato il frame 369/900
+Tempo per leggere un frame dal video: 0.001672 secondi
+Processato il frame 370/900
+Tempo per leggere un frame dal video: 0.001800 secondi
+Processato il frame 371/900
+Tempo per leggere un frame dal video: 0.001684 secondi
+Processato il frame 372/900
+Tempo per leggere un frame dal video: 0.002312 secondi
+Processato il frame 373/900
+Tempo per leggere un frame dal video: 0.002595 secondi
+Processato il frame 374/900
+Tempo per leggere un frame dal video: 0.001885 secondi
+Processato il frame 375/900
+Tempo per leggere un frame dal video: 0.001699 secondi
+Processato il frame 376/900
+Tempo per leggere un frame dal video: 0.001685 secondi
+Processato il frame 377/900
+Tempo per leggere un frame dal video: 0.001689 secondi
+Processato il frame 378/900
+Tempo per leggere un frame dal video: 0.002382 secondi
+Processato il frame 379/900
+Tempo per leggere un frame dal video: 0.001660 secondi
+Processato il frame 380/900
+Tempo per leggere un frame dal video: 0.001663 secondi
+Processato il frame 381/900
+Tempo per leggere un frame dal video: 0.001714 secondi
+Processato il frame 382/900
+Tempo per leggere un frame dal video: 0.002211 secondi
+Processato il frame 383/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 384/900
+Tempo per leggere un frame dal video: 0.002267 secondi
+Processato il frame 385/900
+Tempo per leggere un frame dal video: 0.001661 secondi
+Processato il frame 386/900
+Tempo per leggere un frame dal video: 0.001745 secondi
+Processato il frame 387/900
+Tempo per leggere un frame dal video: 0.001710 secondi
+Processato il frame 388/900
+Tempo per leggere un frame dal video: 0.001754 secondi
+Processato il frame 389/900
+Tempo per leggere un frame dal video: 0.001711 secondi
+Processato il frame 390/900
+Tempo per leggere un frame dal video: 0.002454 secondi
+Processato il frame 391/900
+Tempo per leggere un frame dal video: 0.001728 secondi
+Processato il frame 392/900
+Tempo per leggere un frame dal video: 0.002168 secondi
+Processato il frame 393/900
+Tempo per leggere un frame dal video: 0.001723 secondi
+Processato il frame 394/900
+Tempo per leggere un frame dal video: 0.001823 secondi
+Processato il frame 395/900
+Tempo per leggere un frame dal video: 0.001712 secondi
+Processato il frame 396/900
+Tempo per leggere un frame dal video: 0.002269 secondi
+Processato il frame 397/900
+Tempo per leggere un frame dal video: 0.001727 secondi
+Processato il frame 398/900
+Tempo per leggere un frame dal video: 0.001739 secondi
+Processato il frame 399/900
+Tempo per leggere un frame dal video: 0.001775 secondi
+Processato il frame 400/900
+Tempo per leggere un frame dal video: 0.002180 secondi
+Processato il frame 401/900
+Tempo per leggere un frame dal video: 0.001661 secondi
+Processato il frame 402/900
+Tempo per leggere un frame dal video: 0.002394 secondi
+Processato il frame 403/900
+Tempo per leggere un frame dal video: 0.001773 secondi
+Processato il frame 404/900
+Tempo per leggere un frame dal video: 0.001752 secondi
+Processato il frame 405/900
+Tempo per leggere un frame dal video: 0.001728 secondi
+Processato il frame 406/900
+Tempo per leggere un frame dal video: 0.001847 secondi
+Processato il frame 407/900
+Tempo per leggere un frame dal video: 0.001780 secondi
+Processato il frame 408/900
+Tempo per leggere un frame dal video: 0.002315 secondi
+Processato il frame 409/900
+Tempo per leggere un frame dal video: 0.002551 secondi
+Processato il frame 410/900
+Tempo per leggere un frame dal video: 0.001964 secondi
+Processato il frame 411/900
+Tempo per leggere un frame dal video: 0.001885 secondi
+Processato il frame 412/900
+Tempo per leggere un frame dal video: 0.001734 secondi
+Processato il frame 413/900
+Tempo per leggere un frame dal video: 0.001731 secondi
+Processato il frame 414/900
+Tempo per leggere un frame dal video: 0.002371 secondi
+Processato il frame 415/900
+Tempo per leggere un frame dal video: 0.001695 secondi
+Processato il frame 416/900
+Tempo per leggere un frame dal video: 0.001665 secondi
+Processato il frame 417/900
+Tempo per leggere un frame dal video: 0.002256 secondi
+Processato il frame 418/900
+Tempo per leggere un frame dal video: 0.001738 secondi
+Processato il frame 419/900
+Tempo per leggere un frame dal video: 0.002374 secondi
+Processato il frame 420/900
+Tempo per leggere un frame dal video: 0.002265 secondi
+Processato il frame 421/900
+Tempo per leggere un frame dal video: 0.001702 secondi
+Processato il frame 422/900
+Tempo per leggere un frame dal video: 0.001738 secondi
+Processato il frame 423/900
+Tempo per leggere un frame dal video: 0.001718 secondi
+Processato il frame 424/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 425/900
+Tempo per leggere un frame dal video: 0.001717 secondi
+Processato il frame 426/900
+Tempo per leggere un frame dal video: 0.002833 secondi
+Processato il frame 427/900
+Tempo per leggere un frame dal video: 0.001698 secondi
+Processato il frame 428/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 429/900
+Tempo per leggere un frame dal video: 0.001668 secondi
+Processato il frame 430/900
+Tempo per leggere un frame dal video: 0.001802 secondi
+Processato il frame 431/900
+Tempo per leggere un frame dal video: 0.001716 secondi
+Processato il frame 432/900
+Tempo per leggere un frame dal video: 0.002329 secondi
+Processato il frame 433/900
+Tempo per leggere un frame dal video: 0.001719 secondi
+Processato il frame 434/900
+Tempo per leggere un frame dal video: 0.002788 secondi
+Processato il frame 435/900
+Tempo per leggere un frame dal video: 0.001704 secondi
+Processato il frame 436/900
+Tempo per leggere un frame dal video: 0.001716 secondi
+Processato il frame 437/900
+Tempo per leggere un frame dal video: 0.001673 secondi
+Processato il frame 438/900
+Tempo per leggere un frame dal video: 0.002434 secondi
+Processato il frame 439/900
+Tempo per leggere un frame dal video: 0.001760 secondi
+Processato il frame 440/900
+Tempo per leggere un frame dal video: 0.001660 secondi
+Processato il frame 441/900
+Tempo per leggere un frame dal video: 0.002079 secondi
+Processato il frame 442/900
+Tempo per leggere un frame dal video: 0.001834 secondi
+Processato il frame 443/900
+Tempo per leggere un frame dal video: 0.001665 secondi
+Processato il frame 444/900
+Tempo per leggere un frame dal video: 0.002276 secondi
+Processato il frame 445/900
+Tempo per leggere un frame dal video: 0.001731 secondi
+Processato il frame 446/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 447/900
+Tempo per leggere un frame dal video: 0.001756 secondi
+Processato il frame 448/900
+Tempo per leggere un frame dal video: 0.003348 secondi
+Processato il frame 449/900
+Tempo per leggere un frame dal video: 0.001671 secondi
+Processato il frame 450/900
+Tempo per leggere un frame dal video: 0.002382 secondi
+Processato il frame 451/900
+Tempo per leggere un frame dal video: 0.001652 secondi
+Processato il frame 452/900
+Tempo per leggere un frame dal video: 0.001722 secondi
+Processato il frame 453/900
+Tempo per leggere un frame dal video: 0.001676 secondi
+Processato il frame 454/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 455/900
+Tempo per leggere un frame dal video: 0.001735 secondi
+Processato il frame 456/900
+Tempo per leggere un frame dal video: 0.002240 secondi
+Processato il frame 457/900
+Tempo per leggere un frame dal video: 0.002665 secondi
+Processato il frame 458/900
+Tempo per leggere un frame dal video: 0.001837 secondi
+Processato il frame 459/900
+Tempo per leggere un frame dal video: 0.001731 secondi
+Processato il frame 460/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 461/900
+Tempo per leggere un frame dal video: 0.001724 secondi
+Processato il frame 462/900
+Tempo per leggere un frame dal video: 0.002387 secondi
+Processato il frame 463/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 464/900
+Tempo per leggere un frame dal video: 0.001848 secondi
+Processato il frame 465/900
+Tempo per leggere un frame dal video: 0.001811 secondi
+Processato il frame 466/900
+Tempo per leggere un frame dal video: 0.001790 secondi
+Processato il frame 467/900
+Tempo per leggere un frame dal video: 0.001672 secondi
+Processato il frame 468/900
+Tempo per leggere un frame dal video: 0.002883 secondi
+Processato il frame 469/900
+Tempo per leggere un frame dal video: 0.001677 secondi
+Processato il frame 470/900
+Tempo per leggere un frame dal video: 0.001813 secondi
+Processato il frame 471/900
+Tempo per leggere un frame dal video: 0.001667 secondi
+Processato il frame 472/900
+Tempo per leggere un frame dal video: 0.001723 secondi
+Processato il frame 473/900
+Tempo per leggere un frame dal video: 0.001688 secondi
+Processato il frame 474/900
+Tempo per leggere un frame dal video: 0.002408 secondi
+Processato il frame 475/900
+Tempo per leggere un frame dal video: 0.002199 secondi
+Processato il frame 476/900
+Tempo per leggere un frame dal video: 0.001710 secondi
+Processato il frame 477/900
+Tempo per leggere un frame dal video: 0.001724 secondi
+Processato il frame 478/900
+Tempo per leggere un frame dal video: 0.001759 secondi
+Processato il frame 479/900
+Tempo per leggere un frame dal video: 0.001741 secondi
+Processato il frame 480/900
+Tempo per leggere un frame dal video: 0.002311 secondi
+Processato il frame 481/900
+Tempo per leggere un frame dal video: 0.001770 secondi
+Processato il frame 482/900
+Tempo per leggere un frame dal video: 0.001737 secondi
+Processato il frame 483/900
+Tempo per leggere un frame dal video: 0.001738 secondi
+Processato il frame 484/900
+Tempo per leggere un frame dal video: 0.002385 secondi
+Processato il frame 485/900
+Tempo per leggere un frame dal video: 0.001823 secondi
+Processato il frame 486/900
+Tempo per leggere un frame dal video: 0.002356 secondi
+Processato il frame 487/900
+Tempo per leggere un frame dal video: 0.001768 secondi
+Processato il frame 488/900
+Tempo per leggere un frame dal video: 0.001744 secondi
+Processato il frame 489/900
+Tempo per leggere un frame dal video: 0.001665 secondi
+Processato il frame 490/900
+Tempo per leggere un frame dal video: 0.001817 secondi
+Processato il frame 491/900
+Tempo per leggere un frame dal video: 0.001744 secondi
+Processato il frame 492/900
+Tempo per leggere un frame dal video: 0.002257 secondi
+Processato il frame 493/900
+Tempo per leggere un frame dal video: 0.003287 secondi
+Processato il frame 494/900
+Tempo per leggere un frame dal video: 0.001928 secondi
+Processato il frame 495/900
+Tempo per leggere un frame dal video: 0.001812 secondi
+Processato il frame 496/900
+Tempo per leggere un frame dal video: 0.001749 secondi
+Processato il frame 497/900
+Tempo per leggere un frame dal video: 0.002487 secondi
+Processato il frame 498/900
+Tempo per leggere un frame dal video: 0.002392 secondi
+Processato il frame 499/900
+Tempo per leggere un frame dal video: 0.001731 secondi
+Processato il frame 500/900
+Tempo per leggere un frame dal video: 0.001871 secondi
+Processato il frame 501/900
+Tempo per leggere un frame dal video: 0.001723 secondi
+Processato il frame 502/900
+Tempo per leggere un frame dal video: 0.001771 secondi
+Processato il frame 503/900
+Tempo per leggere un frame dal video: 0.001874 secondi
+Processato il frame 504/900
+Tempo per leggere un frame dal video: 0.002275 secondi
+Processato il frame 505/900
+Tempo per leggere un frame dal video: 0.002339 secondi
+Processato il frame 506/900
+Tempo per leggere un frame dal video: 0.001761 secondi
+Processato il frame 507/900
+Tempo per leggere un frame dal video: 0.001737 secondi
+Processato il frame 508/900
+Tempo per leggere un frame dal video: 0.001752 secondi
+Processato il frame 509/900
+Tempo per leggere un frame dal video: 0.001694 secondi
+Processato il frame 510/900
+Tempo per leggere un frame dal video: 0.002385 secondi
+Processato il frame 511/900
+Tempo per leggere un frame dal video: 0.001764 secondi
+Processato il frame 512/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 513/900
+Tempo per leggere un frame dal video: 0.001704 secondi
+Processato il frame 514/900
+Tempo per leggere un frame dal video: 0.002528 secondi
+Processato il frame 515/900
+Tempo per leggere un frame dal video: 0.001723 secondi
+Processato il frame 516/900
+Tempo per leggere un frame dal video: 0.002230 secondi
+Processato il frame 517/900
+Tempo per leggere un frame dal video: 0.001728 secondi
+Processato il frame 518/900
+Tempo per leggere un frame dal video: 0.001880 secondi
+Processato il frame 519/900
+Tempo per leggere un frame dal video: 0.001659 secondi
+Processato il frame 520/900
+Tempo per leggere un frame dal video: 0.001688 secondi
+Processato il frame 521/900
+Tempo per leggere un frame dal video: 0.001672 secondi
+Processato il frame 522/900
+Tempo per leggere un frame dal video: 0.002465 secondi
+Processato il frame 523/900
+Tempo per leggere un frame dal video: 0.002259 secondi
+Processato il frame 524/900
+Tempo per leggere un frame dal video: 0.001838 secondi
+Processato il frame 525/900
+Tempo per leggere un frame dal video: 0.001689 secondi
+Processato il frame 526/900
+Tempo per leggere un frame dal video: 0.001765 secondi
+Processato il frame 527/900
+Tempo per leggere un frame dal video: 0.001689 secondi
+Processato il frame 528/900
+Tempo per leggere un frame dal video: 0.002267 secondi
+Processato il frame 529/900
+Tempo per leggere un frame dal video: 0.001699 secondi
+Processato il frame 530/900
+Tempo per leggere un frame dal video: 0.001839 secondi
+Processato il frame 531/900
+Tempo per leggere un frame dal video: 0.002707 secondi
+Processato il frame 532/900
+Tempo per leggere un frame dal video: 0.001669 secondi
+Processato il frame 533/900
+Tempo per leggere un frame dal video: 0.001691 secondi
+Processato il frame 534/900
+Tempo per leggere un frame dal video: 0.002431 secondi
+Processato il frame 535/900
+Tempo per leggere un frame dal video: 0.001671 secondi
+Processato il frame 536/900
+Tempo per leggere un frame dal video: 0.001677 secondi
+Processato il frame 537/900
+Tempo per leggere un frame dal video: 0.001769 secondi
+Processato il frame 538/900
+Tempo per leggere un frame dal video: 0.001779 secondi
+Processato il frame 539/900
+Tempo per leggere un frame dal video: 0.002988 secondi
+Processato il frame 540/900
+Tempo per leggere un frame dal video: 0.002252 secondi
+Processato il frame 541/900
+Tempo per leggere un frame dal video: 0.001682 secondi
+Processato il frame 542/900
+Tempo per leggere un frame dal video: 0.001796 secondi
+Processato il frame 543/900
+Tempo per leggere un frame dal video: 0.001765 secondi
+Processato il frame 544/900
+Tempo per leggere un frame dal video: 0.001826 secondi
+Processato il frame 545/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 546/900
+Tempo per leggere un frame dal video: 0.002347 secondi
+Processato il frame 547/900
+Tempo per leggere un frame dal video: 0.002249 secondi
+Processato il frame 548/900
+Tempo per leggere un frame dal video: 0.001665 secondi
+Processato il frame 549/900
+Tempo per leggere un frame dal video: 0.001685 secondi
+Processato il frame 550/900
+Tempo per leggere un frame dal video: 0.001812 secondi
+Processato il frame 551/900
+Tempo per leggere un frame dal video: 0.001698 secondi
+Processato il frame 552/900
+Tempo per leggere un frame dal video: 0.002275 secondi
+Processato il frame 553/900
+Tempo per leggere un frame dal video: 0.001676 secondi
+Processato il frame 554/900
+Tempo per leggere un frame dal video: 0.001782 secondi
+Processato il frame 555/900
+Tempo per leggere un frame dal video: 0.001661 secondi
+Processato il frame 556/900
+Tempo per leggere un frame dal video: 0.001720 secondi
+Processato il frame 557/900
+Tempo per leggere un frame dal video: 0.002259 secondi
+Processato il frame 558/900
+Tempo per leggere un frame dal video: 0.002378 secondi
+Processato il frame 559/900
+Tempo per leggere un frame dal video: 0.001724 secondi
+Processato il frame 560/900
+Tempo per leggere un frame dal video: 0.001729 secondi
+Processato il frame 561/900
+Tempo per leggere un frame dal video: 0.001716 secondi
+Processato il frame 562/900
+Tempo per leggere un frame dal video: 0.001822 secondi
+Processato il frame 563/900
+Tempo per leggere un frame dal video: 0.001713 secondi
+Processato il frame 564/900
+Tempo per leggere un frame dal video: 0.002258 secondi
+Processato il frame 565/900
+Tempo per leggere un frame dal video: 0.002230 secondi
+Processato il frame 566/900
+Tempo per leggere un frame dal video: 0.001772 secondi
+Processato il frame 567/900
+Tempo per leggere un frame dal video: 0.001785 secondi
+Processato il frame 568/900
+Tempo per leggere un frame dal video: 0.001699 secondi
+Processato il frame 569/900
+Tempo per leggere un frame dal video: 0.001720 secondi
+Processato il frame 570/900
+Tempo per leggere un frame dal video: 0.002388 secondi
+Processato il frame 571/900
+Tempo per leggere un frame dal video: 0.001767 secondi
+Processato il frame 572/900
+Tempo per leggere un frame dal video: 0.001669 secondi
+Processato il frame 573/900
+Tempo per leggere un frame dal video: 0.001697 secondi
+Processato il frame 574/900
+Tempo per leggere un frame dal video: 0.002904 secondi
+Processato il frame 575/900
+Tempo per leggere un frame dal video: 0.001705 secondi
+Processato il frame 576/900
+Tempo per leggere un frame dal video: 0.002239 secondi
+Processato il frame 577/900
+Tempo per leggere un frame dal video: 0.001677 secondi
+Processato il frame 578/900
+Tempo per leggere un frame dal video: 0.001729 secondi
+Processato il frame 579/900
+Tempo per leggere un frame dal video: 0.001661 secondi
+Processato il frame 580/900
+Tempo per leggere un frame dal video: 0.002239 secondi
+Processato il frame 581/900
+Tempo per leggere un frame dal video: 0.001668 secondi
+Processato il frame 582/900
+Tempo per leggere un frame dal video: 0.002409 secondi
+Processato il frame 583/900
+Tempo per leggere un frame dal video: 0.001722 secondi
+Processato il frame 584/900
+Tempo per leggere un frame dal video: 0.001721 secondi
+Processato il frame 585/900
+Tempo per leggere un frame dal video: 0.001766 secondi
+Processato il frame 586/900
+Tempo per leggere un frame dal video: 0.001752 secondi
+Processato il frame 587/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 588/900
+Tempo per leggere un frame dal video: 0.002366 secondi
+Processato il frame 589/900
+Tempo per leggere un frame dal video: 0.002187 secondi
+Processato il frame 590/900
+Tempo per leggere un frame dal video: 0.001794 secondi
+Processato il frame 591/900
+Tempo per leggere un frame dal video: 0.001733 secondi
+Processato il frame 592/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 593/900
+Tempo per leggere un frame dal video: 0.001731 secondi
+Processato il frame 594/900
+Tempo per leggere un frame dal video: 0.002394 secondi
+Processato il frame 595/900
+Tempo per leggere un frame dal video: 0.001660 secondi
+Processato il frame 596/900
+Tempo per leggere un frame dal video: 0.001791 secondi
+Processato il frame 597/900
+Tempo per leggere un frame dal video: 0.002682 secondi
+Processato il frame 598/900
+Tempo per leggere un frame dal video: 0.001904 secondi
+Processato il frame 599/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 600/900
+Tempo per leggere un frame dal video: 0.002262 secondi
+Processato il frame 601/900
+Tempo per leggere un frame dal video: 0.001673 secondi
+Processato il frame 602/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 603/900
+Tempo per leggere un frame dal video: 0.001770 secondi
+Processato il frame 604/900
+Tempo per leggere un frame dal video: 0.001726 secondi
+Processato il frame 605/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 606/900
+Tempo per leggere un frame dal video: 0.002863 secondi
+Processato il frame 607/900
+Tempo per leggere un frame dal video: 0.001692 secondi
+Processato il frame 608/900
+Tempo per leggere un frame dal video: 0.001725 secondi
+Processato il frame 609/900
+Tempo per leggere un frame dal video: 0.001694 secondi
+Processato il frame 610/900
+Tempo per leggere un frame dal video: 0.001771 secondi
+Processato il frame 611/900
+Tempo per leggere un frame dal video: 0.002488 secondi
+Processato il frame 612/900
+Tempo per leggere un frame dal video: 0.002318 secondi
+Processato il frame 613/900
+Tempo per leggere un frame dal video: 0.001835 secondi
+Processato il frame 614/900
+Tempo per leggere un frame dal video: 0.001754 secondi
+Processato il frame 615/900
+Tempo per leggere un frame dal video: 0.001711 secondi
+Processato il frame 616/900
+Tempo per leggere un frame dal video: 0.001784 secondi
+Processato il frame 617/900
+Tempo per leggere un frame dal video: 0.001658 secondi
+Processato il frame 618/900
+Tempo per leggere un frame dal video: 0.002342 secondi
+Processato il frame 619/900
+Tempo per leggere un frame dal video: 0.001813 secondi
+Processato il frame 620/900
+Tempo per leggere un frame dal video: 0.001796 secondi
+Processato il frame 621/900
+Tempo per leggere un frame dal video: 0.002183 secondi
+Processato il frame 622/900
+Tempo per leggere un frame dal video: 0.001753 secondi
+Processato il frame 623/900
+Tempo per leggere un frame dal video: 0.001670 secondi
+Processato il frame 624/900
+Tempo per leggere un frame dal video: 0.002267 secondi
+Processato il frame 625/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 626/900
+Tempo per leggere un frame dal video: 0.001796 secondi
+Processato il frame 627/900
+Tempo per leggere un frame dal video: 0.001820 secondi
+Processato il frame 628/900
+Tempo per leggere un frame dal video: 0.001721 secondi
+Processato il frame 629/900
+Tempo per leggere un frame dal video: 0.002161 secondi
+Processato il frame 630/900
+Tempo per leggere un frame dal video: 0.002392 secondi
+Processato il frame 631/900
+Tempo per leggere un frame dal video: 0.001673 secondi
+Processato il frame 632/900
+Tempo per leggere un frame dal video: 0.001780 secondi
+Processato il frame 633/900
+Tempo per leggere un frame dal video: 0.001729 secondi
+Processato il frame 634/900
+Tempo per leggere un frame dal video: 0.001736 secondi
+Processato il frame 635/900
+Tempo per leggere un frame dal video: 0.001729 secondi
+Processato il frame 636/900
+Tempo per leggere un frame dal video: 0.002904 secondi
+Processato il frame 637/900
+Tempo per leggere un frame dal video: 0.001714 secondi
+Processato il frame 638/900
+Tempo per leggere un frame dal video: 0.001789 secondi
+Processato il frame 639/900
+Tempo per leggere un frame dal video: 0.001673 secondi
+Processato il frame 640/900
+Tempo per leggere un frame dal video: 0.001745 secondi
+Processato il frame 641/900
+Tempo per leggere un frame dal video: 0.001672 secondi
+Processato il frame 642/900
+Tempo per leggere un frame dal video: 0.002396 secondi
+Processato il frame 643/900
+Tempo per leggere un frame dal video: 0.002926 secondi
+Processato il frame 644/900
+Tempo per leggere un frame dal video: 0.001673 secondi
+Processato il frame 645/900
+Tempo per leggere un frame dal video: 0.001791 secondi
+Processato il frame 646/900
+Tempo per leggere un frame dal video: 0.001855 secondi
+Processato il frame 647/900
+Tempo per leggere un frame dal video: 0.001715 secondi
+Processato il frame 648/900
+Tempo per leggere un frame dal video: 0.002300 secondi
+Processato il frame 649/900
+Tempo per leggere un frame dal video: 0.001664 secondi
+Processato il frame 650/900
+Tempo per leggere un frame dal video: 0.001806 secondi
+Processato il frame 651/900
+Tempo per leggere un frame dal video: 0.002598 secondi
+Processato il frame 652/900
+Tempo per leggere un frame dal video: 0.001862 secondi
+Processato il frame 653/900
+Tempo per leggere un frame dal video: 0.001913 secondi
+Processato il frame 654/900
+Tempo per leggere un frame dal video: 0.002424 secondi
+Processato il frame 655/900
+Tempo per leggere un frame dal video: 0.001736 secondi
+Processato il frame 656/900
+Tempo per leggere un frame dal video: 0.001724 secondi
+Processato il frame 657/900
+Tempo per leggere un frame dal video: 0.001749 secondi
+Processato il frame 658/900
+Tempo per leggere un frame dal video: 0.001806 secondi
+Processato il frame 659/900
+Tempo per leggere un frame dal video: 0.002209 secondi
+Processato il frame 660/900
+Tempo per leggere un frame dal video: 0.002307 secondi
+Processato il frame 661/900
+Tempo per leggere un frame dal video: 0.001770 secondi
+Processato il frame 662/900
+Tempo per leggere un frame dal video: 0.001790 secondi
+Processato il frame 663/900
+Tempo per leggere un frame dal video: 0.001745 secondi
+Processato il frame 664/900
+Tempo per leggere un frame dal video: 0.001672 secondi
+Processato il frame 665/900
+Tempo per leggere un frame dal video: 0.001744 secondi
+Processato il frame 666/900
+Tempo per leggere un frame dal video: 0.002392 secondi
+Processato il frame 667/900
+Tempo per leggere un frame dal video: 0.001660 secondi
+Processato il frame 668/900
+Tempo per leggere un frame dal video: 0.002569 secondi
+Processato il frame 669/900
+Tempo per leggere un frame dal video: 0.001874 secondi
+Processato il frame 670/900
+Tempo per leggere un frame dal video: 0.002096 secondi
+Processato il frame 671/900
+Tempo per leggere un frame dal video: 0.001854 secondi
+Processato il frame 672/900
+Tempo per leggere un frame dal video: 0.002221 secondi
+Processato il frame 673/900
+Tempo per leggere un frame dal video: 0.001687 secondi
+Processato il frame 674/900
+Tempo per leggere un frame dal video: 0.001785 secondi
+Processato il frame 675/900
+Tempo per leggere un frame dal video: 0.001676 secondi
+Processato il frame 676/900
+Tempo per leggere un frame dal video: 0.002156 secondi
+Processato il frame 677/900
+Tempo per leggere un frame dal video: 0.001722 secondi
+Processato il frame 678/900
+Tempo per leggere un frame dal video: 0.002415 secondi
+Processato il frame 679/900
+Tempo per leggere un frame dal video: 0.001662 secondi
+Processato il frame 680/900
+Tempo per leggere un frame dal video: 0.001675 secondi
+Processato il frame 681/900
+Tempo per leggere un frame dal video: 0.001681 secondi
+Processato il frame 682/900
+Tempo per leggere un frame dal video: 0.002254 secondi
+Processato il frame 683/900
+Tempo per leggere un frame dal video: 0.001668 secondi
+Processato il frame 684/900
+Tempo per leggere un frame dal video: 0.002284 secondi
+Processato il frame 685/900
+Tempo per leggere un frame dal video: 0.001738 secondi
+Processato il frame 686/900
+Tempo per leggere un frame dal video: 0.001788 secondi
+Processato il frame 687/900
+Tempo per leggere un frame dal video: 0.001684 secondi
+Processato il frame 688/900
+Tempo per leggere un frame dal video: 0.001703 secondi
+Processato il frame 689/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 690/900
+Tempo per leggere un frame dal video: 0.002372 secondi
+Processato il frame 691/900
+Tempo per leggere un frame dal video: 0.001758 secondi
+Processato il frame 692/900
+Tempo per leggere un frame dal video: 0.002141 secondi
+Processato il frame 693/900
+Tempo per leggere un frame dal video: 0.001664 secondi
+Processato il frame 694/900
+Tempo per leggere un frame dal video: 0.001785 secondi
+Processato il frame 695/900
+Tempo per leggere un frame dal video: 0.001782 secondi
+Processato il frame 696/900
+Tempo per leggere un frame dal video: 0.002243 secondi
+Processato il frame 697/900
+Tempo per leggere un frame dal video: 0.002483 secondi
+Processato il frame 698/900
+Tempo per leggere un frame dal video: 0.001890 secondi
+Processato il frame 699/900
+Tempo per leggere un frame dal video: 0.001882 secondi
+Processato il frame 700/900
+Tempo per leggere un frame dal video: 0.001813 secondi
+Processato il frame 701/900
+Tempo per leggere un frame dal video: 0.001879 secondi
+Processato il frame 702/900
+Tempo per leggere un frame dal video: 0.002419 secondi
+Processato il frame 703/900
+Tempo per leggere un frame dal video: 0.001710 secondi
+Processato il frame 704/900
+Tempo per leggere un frame dal video: 0.001786 secondi
+Processato il frame 705/900
+Tempo per leggere un frame dal video: 0.002170 secondi
+Processato il frame 706/900
+Tempo per leggere un frame dal video: 0.001793 secondi
+Processato il frame 707/900
+Tempo per leggere un frame dal video: 0.001790 secondi
+Processato il frame 708/900
+Tempo per leggere un frame dal video: 0.002264 secondi
+Processato il frame 709/900
+Tempo per leggere un frame dal video: 0.001764 secondi
+Processato il frame 710/900
+Tempo per leggere un frame dal video: 0.001740 secondi
+Processato il frame 711/900
+Tempo per leggere un frame dal video: 0.001740 secondi
+Processato il frame 712/900
+Tempo per leggere un frame dal video: 0.001752 secondi
+Processato il frame 713/900
+Tempo per leggere un frame dal video: 0.001706 secondi
+Processato il frame 714/900
+Tempo per leggere un frame dal video: 0.002880 secondi
+Processato il frame 715/900
+Tempo per leggere un frame dal video: 0.001764 secondi
+Processato il frame 716/900
+Tempo per leggere un frame dal video: 0.001719 secondi
+Processato il frame 717/900
+Tempo per leggere un frame dal video: 0.001715 secondi
+Processato il frame 718/900
+Tempo per leggere un frame dal video: 0.001739 secondi
+Processato il frame 719/900
+Tempo per leggere un frame dal video: 0.001754 secondi
+Processato il frame 720/900
+Tempo per leggere un frame dal video: 0.002215 secondi
+Processato il frame 721/900
+Tempo per leggere un frame dal video: 0.001692 secondi
+Processato il frame 722/900
+Tempo per leggere un frame dal video: 0.001726 secondi
+Processato il frame 723/900
+Tempo per leggere un frame dal video: 0.001749 secondi
+Processato il frame 724/900
+Tempo per leggere un frame dal video: 0.002623 secondi
+Processato il frame 725/900
+Tempo per leggere un frame dal video: 0.001707 secondi
+Processato il frame 726/900
+Tempo per leggere un frame dal video: 0.002355 secondi
+Processato il frame 727/900
+Tempo per leggere un frame dal video: 0.001713 secondi
+Processato il frame 728/900
+Tempo per leggere un frame dal video: 0.001674 secondi
+Processato il frame 729/900
+Tempo per leggere un frame dal video: 0.001741 secondi
+Processato il frame 730/900
+Tempo per leggere un frame dal video: 0.001747 secondi
+Processato il frame 731/900
+Tempo per leggere un frame dal video: 0.001724 secondi
+Processato il frame 732/900
+Tempo per leggere un frame dal video: 0.002767 secondi
+Processato il frame 733/900
+Tempo per leggere un frame dal video: 0.001720 secondi
+Processato il frame 734/900
+Tempo per leggere un frame dal video: 0.001753 secondi
+Processato il frame 735/900
+Tempo per leggere un frame dal video: 0.001672 secondi
+Processato il frame 736/900
+Tempo per leggere un frame dal video: 0.001676 secondi
+Processato il frame 737/900
+Tempo per leggere un frame dal video: 0.001731 secondi
+Processato il frame 738/900
+Tempo per leggere un frame dal video: 0.002389 secondi
+Processato il frame 739/900
+Tempo per leggere un frame dal video: 0.001722 secondi
+Processato il frame 740/900
+Tempo per leggere un frame dal video: 0.001667 secondi
+Processato il frame 741/900
+Tempo per leggere un frame dal video: 0.002895 secondi
+Processato il frame 742/900
+Tempo per leggere un frame dal video: 0.001815 secondi
+Processato il frame 743/900
+Tempo per leggere un frame dal video: 0.002172 secondi
+Processato il frame 744/900
+Tempo per leggere un frame dal video: 0.002216 secondi
+Processato il frame 745/900
+Tempo per leggere un frame dal video: 0.002665 secondi
+Processato il frame 746/900
+Tempo per leggere un frame dal video: 0.001943 secondi
+Processato il frame 747/900
+Tempo per leggere un frame dal video: 0.001673 secondi
+Processato il frame 748/900
+Tempo per leggere un frame dal video: 0.001718 secondi
+Processato il frame 749/900
+Tempo per leggere un frame dal video: 0.001710 secondi
+Processato il frame 750/900
+Tempo per leggere un frame dal video: 0.002356 secondi
+Processato il frame 751/900
+Tempo per leggere un frame dal video: 0.001854 secondi
+Processato il frame 752/900
+Tempo per leggere un frame dal video: 0.001856 secondi
+Processato il frame 753/900
+Tempo per leggere un frame dal video: 0.001720 secondi
+Processato il frame 754/900
+Tempo per leggere un frame dal video: 0.002296 secondi
+Processato il frame 755/900
+Tempo per leggere un frame dal video: 0.001725 secondi
+Processato il frame 756/900
+Tempo per leggere un frame dal video: 0.002290 secondi
+Processato il frame 757/900
+Tempo per leggere un frame dal video: 0.001785 secondi
+Processato il frame 758/900
+Tempo per leggere un frame dal video: 0.001996 secondi
+Processato il frame 759/900
+Tempo per leggere un frame dal video: 0.001749 secondi
+Processato il frame 760/900
+Tempo per leggere un frame dal video: 0.002250 secondi
+Processato il frame 761/900
+Tempo per leggere un frame dal video: 0.001734 secondi
+Processato il frame 762/900
+Tempo per leggere un frame dal video: 0.002389 secondi
+Processato il frame 763/900
+Tempo per leggere un frame dal video: 0.001758 secondi
+Processato il frame 764/900
+Tempo per leggere un frame dal video: 0.001702 secondi
+Processato il frame 765/900
+Tempo per leggere un frame dal video: 0.001719 secondi
+Processato il frame 766/900
+Tempo per leggere un frame dal video: 0.001807 secondi
+Processato il frame 767/900
+Tempo per leggere un frame dal video: 0.001726 secondi
+Processato il frame 768/900
+Tempo per leggere un frame dal video: 0.002348 secondi
+Processato il frame 769/900
+Tempo per leggere un frame dal video: 0.002174 secondi
+Processato il frame 770/900
+Tempo per leggere un frame dal video: 0.001764 secondi
+Processato il frame 771/900
+Tempo per leggere un frame dal video: 0.001718 secondi
+Processato il frame 772/900
+Tempo per leggere un frame dal video: 0.001725 secondi
+Processato il frame 773/900
+Tempo per leggere un frame dal video: 0.001710 secondi
+Processato il frame 774/900
+Tempo per leggere un frame dal video: 0.002372 secondi
+Processato il frame 775/900
+Tempo per leggere un frame dal video: 0.001718 secondi
+Processato il frame 776/900
+Tempo per leggere un frame dal video: 0.001703 secondi
+Processato il frame 777/900
+Tempo per leggere un frame dal video: 0.002116 secondi
+Processato il frame 778/900
+Tempo per leggere un frame dal video: 0.001778 secondi
+Processato il frame 779/900
+Tempo per leggere un frame dal video: 0.001748 secondi
+Processato il frame 780/900
+Tempo per leggere un frame dal video: 0.002219 secondi
+Processato il frame 781/900
+Tempo per leggere un frame dal video: 0.001670 secondi
+Processato il frame 782/900
+Tempo per leggere un frame dal video: 0.001781 secondi
+Processato il frame 783/900
+Tempo per leggere un frame dal video: 0.001742 secondi
+Processato il frame 784/900
+Tempo per leggere un frame dal video: 0.001685 secondi
+Processato il frame 785/900
+Tempo per leggere un frame dal video: 0.001745 secondi
+Processato il frame 786/900
+Tempo per leggere un frame dal video: 0.002916 secondi
+Processato il frame 787/900
+Tempo per leggere un frame dal video: 0.001726 secondi
+Processato il frame 788/900
+Tempo per leggere un frame dal video: 0.001727 secondi
+Processato il frame 789/900
+Tempo per leggere un frame dal video: 0.001671 secondi
+Processato il frame 790/900
+Tempo per leggere un frame dal video: 0.001815 secondi
+Processato il frame 791/900
+Tempo per leggere un frame dal video: 0.001670 secondi
+Processato il frame 792/900
+Tempo per leggere un frame dal video: 0.002326 secondi
+Processato il frame 793/900
+Tempo per leggere un frame dal video: 0.002729 secondi
+Processato il frame 794/900
+Tempo per leggere un frame dal video: 0.001756 secondi
+Processato il frame 795/900
+Tempo per leggere un frame dal video: 0.001702 secondi
+Processato il frame 796/900
+Tempo per leggere un frame dal video: 0.001755 secondi
+Processato il frame 797/900
+Tempo per leggere un frame dal video: 0.001778 secondi
+Processato il frame 798/900
+Tempo per leggere un frame dal video: 0.002434 secondi
+Processato il frame 799/900
+Tempo per leggere un frame dal video: 0.001723 secondi
+Processato il frame 800/900
+Tempo per leggere un frame dal video: 0.001681 secondi
+Processato il frame 801/900
+Tempo per leggere un frame dal video: 0.001741 secondi
+Processato il frame 802/900
+Tempo per leggere un frame dal video: 0.001796 secondi
+Processato il frame 803/900
+Tempo per leggere un frame dal video: 0.005529 secondi
+Processato il frame 804/900
+Tempo per leggere un frame dal video: 0.002360 secondi
+Processato il frame 805/900
+Tempo per leggere un frame dal video: 0.001696 secondi
+Processato il frame 806/900
+Tempo per leggere un frame dal video: 0.001812 secondi
+Processato il frame 807/900
+Tempo per leggere un frame dal video: 0.001712 secondi
+Processato il frame 808/900
+Tempo per leggere un frame dal video: 0.001755 secondi
+Processato il frame 809/900
+Tempo per leggere un frame dal video: 0.002210 secondi
+Processato il frame 810/900
+Tempo per leggere un frame dal video: 0.002343 secondi
+Processato il frame 811/900
+Tempo per leggere un frame dal video: 0.001695 secondi
+Processato il frame 812/900
+Tempo per leggere un frame dal video: 0.001691 secondi
+Processato il frame 813/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 814/900
+Tempo per leggere un frame dal video: 0.001802 secondi
+Processato il frame 815/900
+Tempo per leggere un frame dal video: 0.001679 secondi
+Processato il frame 816/900
+Tempo per leggere un frame dal video: 0.002301 secondi
+Processato il frame 817/900
+Tempo per leggere un frame dal video: 0.001727 secondi
+Processato il frame 818/900
+Tempo per leggere un frame dal video: 0.002240 secondi
+Processato il frame 819/900
+Tempo per leggere un frame dal video: 0.001664 secondi
+Processato il frame 820/900
+Tempo per leggere un frame dal video: 0.001742 secondi
+Processato il frame 821/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 822/900
+Tempo per leggere un frame dal video: 0.002392 secondi
+Processato il frame 823/900
+Tempo per leggere un frame dal video: 0.001730 secondi
+Processato il frame 824/900
+Tempo per leggere un frame dal video: 0.001736 secondi
+Processato il frame 825/900
+Tempo per leggere un frame dal video: 0.001708 secondi
+Processato il frame 826/900
+Tempo per leggere un frame dal video: 0.001817 secondi
+Processato il frame 827/900
+Tempo per leggere un frame dal video: 0.002594 secondi
+Processato il frame 828/900
+Tempo per leggere un frame dal video: 0.002272 secondi
+Processato il frame 829/900
+Tempo per leggere un frame dal video: 0.001750 secondi
+Processato il frame 830/900
+Tempo per leggere un frame dal video: 0.001777 secondi
+Processato il frame 831/900
+Tempo per leggere un frame dal video: 0.001702 secondi
+Processato il frame 832/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 833/900
+Tempo per leggere un frame dal video: 0.001737 secondi
+Processato il frame 834/900
+Tempo per leggere un frame dal video: 0.002950 secondi
+Processato il frame 835/900
+Tempo per leggere un frame dal video: 0.001719 secondi
+Processato il frame 836/900
+Tempo per leggere un frame dal video: 0.001760 secondi
+Processato il frame 837/900
+Tempo per leggere un frame dal video: 0.001827 secondi
+Processato il frame 838/900
+Tempo per leggere un frame dal video: 0.001788 secondi
+Processato il frame 839/900
+Tempo per leggere un frame dal video: 0.001724 secondi
+Processato il frame 840/900
+Tempo per leggere un frame dal video: 0.002250 secondi
+Processato il frame 841/900
+Tempo per leggere un frame dal video: 0.001744 secondi
+Processato il frame 842/900
+Tempo per leggere un frame dal video: 0.001802 secondi
+Processato il frame 843/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 844/900
+Tempo per leggere un frame dal video: 0.002235 secondi
+Processato il frame 845/900
+Tempo per leggere un frame dal video: 0.001713 secondi
+Processato il frame 846/900
+Tempo per leggere un frame dal video: 0.002439 secondi
+Processato il frame 847/900
+Tempo per leggere un frame dal video: 0.001699 secondi
+Processato il frame 848/900
+Tempo per leggere un frame dal video: 0.001703 secondi
+Processato il frame 849/900
+Tempo per leggere un frame dal video: 0.001720 secondi
+Processato il frame 850/900
+Tempo per leggere un frame dal video: 0.001794 secondi
+Processato il frame 851/900
+Tempo per leggere un frame dal video: 0.001658 secondi
+Processato il frame 852/900
+Tempo per leggere un frame dal video: 0.002970 secondi
+Processato il frame 853/900
+Tempo per leggere un frame dal video: 0.001663 secondi
+Processato il frame 854/900
+Tempo per leggere un frame dal video: 0.001831 secondi
+Processato il frame 855/900
+Tempo per leggere un frame dal video: 0.001687 secondi
+Processato il frame 856/900
+Tempo per leggere un frame dal video: 0.001713 secondi
+Processato il frame 857/900
+Tempo per leggere un frame dal video: 0.001783 secondi
+Processato il frame 858/900
+Tempo per leggere un frame dal video: 0.002380 secondi
+Processato il frame 859/900
+Tempo per leggere un frame dal video: 0.001754 secondi
+Processato il frame 860/900
+Tempo per leggere un frame dal video: 0.001706 secondi
+Processato il frame 861/900
+Tempo per leggere un frame dal video: 0.001675 secondi
+Processato il frame 862/900
+Tempo per leggere un frame dal video: 0.002259 secondi
+Processato il frame 863/900
+Tempo per leggere un frame dal video: 0.001668 secondi
+Processato il frame 864/900
+Tempo per leggere un frame dal video: 0.002270 secondi
+Processato il frame 865/900
+Tempo per leggere un frame dal video: 0.001743 secondi
+Processato il frame 866/900
+Tempo per leggere un frame dal video: 0.001800 secondi
+Processato il frame 867/900
+Tempo per leggere un frame dal video: 0.001718 secondi
+Processato il frame 868/900
+Tempo per leggere un frame dal video: 0.001716 secondi
+Processato il frame 869/900
+Tempo per leggere un frame dal video: 0.001677 secondi
+Processato il frame 870/900
+Tempo per leggere un frame dal video: 0.002458 secondi
+Processato il frame 871/900
+Tempo per leggere un frame dal video: 0.002676 secondi
+Processato il frame 872/900
+Tempo per leggere un frame dal video: 0.001752 secondi
+Processato il frame 873/900
+Tempo per leggere un frame dal video: 0.001802 secondi
+Processato il frame 874/900
+Tempo per leggere un frame dal video: 0.001764 secondi
+Processato il frame 875/900
+Tempo per leggere un frame dal video: 0.001773 secondi
+Processato il frame 876/900
+Tempo per leggere un frame dal video: 0.002395 secondi
+Processato il frame 877/900
+Tempo per leggere un frame dal video: 0.001721 secondi
+Processato il frame 878/900
+Tempo per leggere un frame dal video: 0.001848 secondi
+Processato il frame 879/900
+Tempo per leggere un frame dal video: 0.001664 secondi
+Processato il frame 880/900
+Tempo per leggere un frame dal video: 0.001684 secondi
+Processato il frame 881/900
+Tempo per leggere un frame dal video: 0.001824 secondi
+Processato il frame 882/900
+Tempo per leggere un frame dal video: 0.002432 secondi
+Processato il frame 883/900
+Tempo per leggere un frame dal video: 0.001713 secondi
+Processato il frame 884/900
+Tempo per leggere un frame dal video: 0.001708 secondi
+Processato il frame 885/900
+Tempo per leggere un frame dal video: 0.001662 secondi
+Processato il frame 886/900
+Tempo per leggere un frame dal video: 0.001818 secondi
+Processato il frame 887/900
+Tempo per leggere un frame dal video: 0.001667 secondi
+Processato il frame 888/900
+Tempo per leggere un frame dal video: 0.002282 secondi
+Processato il frame 889/900
+Tempo per leggere un frame dal video: 0.001674 secondi
+Processato il frame 890/900
+Tempo per leggere un frame dal video: 0.001833 secondi
+Processato il frame 891/900
+Tempo per leggere un frame dal video: 0.001677 secondi
+Processato il frame 892/900
+Tempo per leggere un frame dal video: 0.001711 secondi
+Processato il frame 893/900
+Tempo per leggere un frame dal video: 0.001634 secondi
+Processato il frame 894/900
+Tempo per leggere un frame dal video: 0.001734 secondi
+Processato il frame 895/900
+Tempo per leggere un frame dal video: 0.001611 secondi
+Processato il frame 896/900
+Tempo per leggere un frame dal video: 0.001614 secondi
+Processato il frame 897/900
+Tempo per leggere un frame dal video: 0.001678 secondi
+Processato il frame 898/900
+Tempo per leggere un frame dal video: 0.001709 secondi
+Processato il frame 899/900
+Tempo per leggere un frame dal video: 0.001596 secondi
+Processato il frame 900/900
+Fine inferenza, video salvato in 20240826_181252_20240909_143019.mp4
+Tempo per inferenza: 146.035839 secondi
+Rim bounding boxes prima di rehsape: [array([     385.97,      524.64,      419.58,      557.03])]
+Tempo di per inferenza: 0.176133 secondi
+BBoxes rim:  [[     385.97      524.64      419.58      557.03]]
