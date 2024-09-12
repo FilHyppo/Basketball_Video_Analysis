@@ -27,6 +27,64 @@ def load_rim_ball_labels_xyxy(file_path: str, verbose=False) -> list[sv.Detectio
 
     return detections_per_frame
 
+def load_player_tracking(file_path: str):
+    """
+    Funzione per caricare label salvate in formato: 
+    frame_number, id_giocatore, x, y, width, height, conf, team 
+
+    Ritorna una lista di liste di tuple
+    """
+
+    with open(file_path, 'r') as f:
+        # Leggi tutte le linee del file
+        lines = f.readlines()
+        tot_frames = int(lines[-1].split(',')[0])
+        tot_frames += 1
+        detections = [[] for _ in range(tot_frames)]
+        for line in lines:
+            # Elimina eventuali spazi e separa i valori per ogni linea
+            row = line.strip().split(',')
+
+            # Estrai i valori dal file CSV
+            frame_number = int(row[0])
+            player_id = int(row[1])
+            x = float(row[2])
+            y = float(row[3])
+            width = float(row[4])
+            height = float(row[5])
+            conf = float(row[6])
+            team = int(float(row[7]))
+
+            # Crea l'oggetto Detections
+            detection = (
+                frame_number,
+                player_id,
+                x,
+                y,
+                width,
+                height,
+                conf,
+                team
+            )
+
+            # Aggiungi la rilevazione alla lista
+            detections[frame_number].append(detection)
+
+    return detections
+
+
+
+def load_scores(file_path: str):
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+    tot_frames = int(lines[-1].split(',')[0])
+    tot_frames += 1
+    scores= []
+    for i, line in enumerate(lines):
+        frame_number, score_left, score_right = map(int, line.strip().split(','))
+        scores.append((score_left, score_right))
+    return scores
+
 def load_rim_ball_labels_xywh_top_corner(file_path: str, verbose=False) -> list[sv.Detections]:
     """
     Funzione per caricare label salvate in formato: frame_number, class_id, x1, y1, w, h, conf:
@@ -101,3 +159,4 @@ def main(): # Main per testing
 
 if __name__ == '__main__':
     main()
+   
