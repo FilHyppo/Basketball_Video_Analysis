@@ -154,6 +154,9 @@ class BasketballScoreDetector:
         self.states = [State() for _ in self.hoop_regions]     
         self.base_frame_gray = cv2.cvtColor(base_frame, cv2.COLOR_BGR2GRAY)
         self.base_frame_gray = cv2.GaussianBlur(self.base_frame_gray, (5, 5), 0)
+        self.lower_ball_color = None
+        self.upper_ball_color = None
+        self.ball_mask=None
 
     def _initialize_base_frame(self):
         ret, base_frame = self.video_capture.read()
@@ -172,7 +175,20 @@ class BasketballScoreDetector:
         if self.verbose:
             print("First frame saved as 'first_frame.jpg'")
 
-    
+    def draw_colors_on_frame(self,frame, lower_color_hsv, upper_color_hsv):
+        # Definisci le dimensioni dei rettangoli
+        rect_size = (50, 50)
+
+        # Converti i colori HSV in BGR
+        lower_color_bgr = cv2.cvtColor(np.uint8([[lower_color_hsv]]), cv2.COLOR_HSV2BGR)[0][0]
+        upper_color_bgr = cv2.cvtColor(np.uint8([[upper_color_hsv]]), cv2.COLOR_HSV2BGR)[0][0]
+
+        # Disegna il rettangolo per il colore inferiore
+        cv2.rectangle(frame, (10, 10), (10 + rect_size[0], 10 + rect_size[1]), lower_color_bgr.tolist(), -1)
+
+        # Disegna il rettangolo per il colore superiore
+        cv2.rectangle(frame, (70, 10), (70 + rect_size[0], 10 + rect_size[1]), upper_color_bgr.tolist(), -1)
+
 
 
     def write_score(self, frame):
@@ -192,7 +208,16 @@ class BasketballScoreDetector:
         frame_diff = cv2.absdiff(frame_gray, self.base_frame_gray)
         _, binary_diff = cv2.threshold(frame_diff, self.threshold, 255, cv2.THRESH_BINARY)
 
-        
+        # Aggiungi conversione da BGR a HSV per il controllo colore
+        frame_hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        # Crea la maschera per individuare i colori simili alla palla
+        ball_mask = None
+        if self.lower_ball_color is not None and self.upper_ball_color is not None:
+            ball_mask = cv2.inRange(frame_hsv, self.lower_ball_color, self.upper_ball_color)
+            self.draw_colors_on_frame(frame, self.lower_ball_color, self.upper_ball_color)
+            self.ball_mask=ball_mask
+
+
         num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(binary_diff, connectivity=8)
         
         for hoop_top_left, hoop_bottom_right in self.hoop_regions:
@@ -216,6 +241,17 @@ class BasketballScoreDetector:
                     cv2.rectangle(frame, (round(hoop_top_left[0] - 0.5*W), hoop_top_left[1]-round(1*H)), (round(hoop_bottom_right[0] + 0.5*W), hoop_top_left[1]), (255, 0, 0), 2)
                     if(hoop_top_left[1]-round(1*H) < y < hoop_top_left[1] and hoop_top_left[0] - 0.5*W < x < hoop_bottom_right[0] + 0.5*W):     #need to to hit the top of the hoop first
                         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                        # Controlla se l'area individuata ha il colore della palla
+                        if ball_mask is not None:
+                            object_region = ball_mask[y:y+h, x:x+w]
+                            ball_pixels = cv2.countNonZero(object_region)
+                            object_area = w * h
+                    
+                            # Se una parte significativa dell'oggetto corrisponde alla palla, lo consideriamo come la palla
+                            if ball_pixels / object_area < 0.5:  # Almeno il 50% dell'area deve essere del colore della palla
+                                cv2.putText(frame, "No Ball", (400,400), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+                                continue
+                        
                         over=True
                         founds[idx]=True
                     

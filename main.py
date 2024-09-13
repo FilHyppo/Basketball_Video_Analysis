@@ -2,20 +2,27 @@ from utils.scoring import BasketballScoreDetector
 from utils.rim_detection import RimDetector
 from utils.rim_ball_detection import RimBallDetector
 import cv2
+from utils.ball_color import get_ball_color_range
 
 
-video_capture = cv2.VideoCapture('input_videos/1_1.mp4')
-output_video=cv2.VideoWriter('outputs/1_1.avi', cv2.VideoWriter_fourcc(*'XVID'), video_capture.get(cv2.CAP_PROP_FPS), 
+# Carica l'immagine
+image_path = 'outputs/frame_1570.jpg'
+frame = cv2.imread(image_path)
+
+# Definisci la bounding box (esempio)
+bounding_box = (213,674,23,23)  # (x, y, w, h)
+
+# Calcola il range di colore della palla
+lower_ball_color, upper_ball_color = get_ball_color_range(bounding_box, frame)
+
+
+
+
+
+video_capture = cv2.VideoCapture('input_videos/partita_2.mp4')
+output_video=cv2.VideoWriter('outputs/partita_2.avi', cv2.VideoWriter_fourcc(*'XVID'), video_capture.get(cv2.CAP_PROP_FPS), 
                                             (int(video_capture.get(3)), int(video_capture.get(4))))
 _, base_frame = video_capture.read()
-count=0
-while video_capture.isOpened():
-    count+=1
-    ret, base_frame = video_capture.read()
-    if count<20:
-        continue 
-    ret, base_frame = video_capture.read()
-    break
 
 rim_detector = RimDetector(model_path='models/rim-detection/yolo_v5(my-dataset).pt')
 hoop_regions= rim_detector.detect_rims(base_frame, verbose=True)
@@ -56,6 +63,9 @@ score_detector = BasketballScoreDetector(
     verbose=True
 )
 
+score_detector.upper_ball_color = upper_ball_color
+score_detector.lower_ball_color = lower_ball_color
+
 # # detector = BasketballHoopDetector(
 # #     video_path='input_videos/example.mp4',
 # #     output_path_color='outputs/example.avi',
@@ -68,13 +78,12 @@ score_detector = BasketballScoreDetector(
 prec_score=None
 count=0
 file=open('outputs/labels.txt', 'w')
-
-video_capture = cv2.VideoCapture('input_videos/1_1.mp4')
+file.write(f"{0},{score_detector.states[0].score},{score_detector.states[1].score}\n")
+last_score_sx=0
+last_score_dx=0
 while video_capture.isOpened():
     count+=1 
     ret, frame = video_capture.read()
-    if count<20:
-        continue 
     if not ret:
         break
     score_detector.process_frame(frame)
@@ -83,9 +92,19 @@ while video_capture.isOpened():
     
     prec_score=score_detector.states[0].score
     
-    file.write(f"{count-1},{score_detector.states[0].score},{score_detector.states[1].score}\n")
+    if last_score_sx != score_detector.states[0].score:
+        last_score_sx=score_detector.states[0].score
+        file.write(f"{count},{1},{0}\n")
+
+    if last_score_dx != score_detector.states[1].score:
+        last_score_dx=score_detector.states[1].score
+        file.write(f"{count},{0},{1}\n")
+    
+    if last_score_dx==score_detector.states[1].score and last_score_sx==score_detector.states[0].score:
+        file.write(f"{count},{0},{0}\n")
     frame=score_detector.write_score(frame)
     output_video.write(frame)
+    #cv2.imwrite("outputs/frame" + str(count) + ".jpg", score_detector.ball_mask)
 
 
 video_capture.release()
