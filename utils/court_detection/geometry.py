@@ -10,56 +10,84 @@ def corner_2_tuple(corner):
 def feet(n, foot, inches=0):
     return int(n * foot + inches * foot / 12)
 
-def corner_pos(id: str, w, h):
+def corner_pos(id: str, w, h, court_type=0):
     """
     Funzione che ritorna la poszione dei corner del court plane
     """
     foot1 = h / 50
-    foot2 = w / 92.6 ################################# 94
+    foot2 = w / 94
     foot = (foot1 + foot2) / 2
-
     if id == 'P0':
         return 0, 0
-    if id == 'P1':
-        return 0, int(h * 0.5) - feet(8, foot)
-    if id == 'P2':
-        return 0, int(h * 0.5) + feet(8, foot)
     if id == 'P3':
         return 0, h
-    if id == 'P4':
-        return 0 + feet(19, foot), int(h * 0.5) - feet(8, foot)
-    if id == 'P5':
-        return 0 + feet(19, foot), int(h * 0.5) +  feet(8,foot)
     if id == 'P6':
         return w // 2, 0
     if id == 'P7':
         return w // 2, h
     if id == 'P8':
         return w, 0
-    if id == 'P9':
-        return w, int(h * 0.5) - feet(8, foot)
-    if id == 'P10':
-        return w, int(h * 0.5) + feet(8, foot)
     if id == 'P11':
         return w, h
-    if id == 'P12':
-        return w - feet(19, foot), int(h * 0.5) - feet(8, foot)
-    if id == 'P13':
-        return w - feet(19, foot), int(h * 0.5) + feet(8, foot)
+
     if id == 'P14':
-        return w // 2, h // 2
+            return w // 2, h // 2
+
     if id == 'rim_left':
-        return feet(4, foot), int(h * 0.5)
+            return feet(4, foot), int(h * 0.5)
     if id == 'rim_right':
         return (w - feet(4, foot), int(h * 0.5))
+
+    if court_type == 0:
+        if id == 'P1':
+            return 0, int(h * 0.5) - feet(8, foot)
+        if id == 'P2':
+            return 0, int(h * 0.5) + feet(8, foot)
+        
+        if id == 'P4':
+            return 0 + feet(19, foot), int(h * 0.5) - feet(8, foot)
+        if id == 'P5':
+            return 0 + feet(19, foot), int(h * 0.5) +  feet(8,foot)
+        
+        if id == 'P9':
+            return w, int(h * 0.5) - feet(8, foot)
+        if id == 'P10':
+            return w, int(h * 0.5) + feet(8, foot)
+        
+        if id == 'P12':
+            return w - feet(19, foot), int(h * 0.5) - feet(8, foot)
+        if id == 'P13':
+            return w - feet(19, foot), int(h * 0.5) + feet(8, foot)
+        
+    elif court_type == 1: # High SChool court
+        if id == 'P1':
+            return 0, int(h * 0.5) - feet(6, foot)
+        if id == 'P2':
+            return 0, int(h * 0.5) + feet(6, foot)
+        
+        if id == 'P4':
+            return 0 + feet(19, foot), int(h * 0.5) - feet(6, foot)
+        if id == 'P5':
+            return 0 + feet(19, foot), int(h * 0.5) +  feet(6,foot)
+        
+        if id == 'P9':
+            return w, int(h * 0.5) - feet(6, foot)
+        if id == 'P10':
+            return w, int(h * 0.5) + feet(6, foot)
+        
+        if id == 'P12':
+            return w - feet(19, foot), int(h * 0.5) - feet(6, foot)
+        if id == 'P13':
+            return w - feet(19, foot), int(h * 0.5) + feet(6, foot)
+
     return 0, 0
 
-def top_view(frame, corners, inverse=False, new_h=None, new_w=None):
+def top_view(frame, corners, inverse=False, court_type=0, new_h=None, new_w=None):
     """
     Funzione che ritorna la vista dall'alto del campo    
     """
     h, w = frame.shape[:2]
-    M, status = find_homography_matrix(frame, corners, inverse)
+    M, status = find_homography_matrix(frame=frame, corners=corners, inverse=inverse, court_type=court_type)
     if new_h is None:
         new_h = h
     if new_w is None:
@@ -69,20 +97,29 @@ def top_view(frame, corners, inverse=False, new_h=None, new_w=None):
     return frame_top_view
 
 
-def mask_court(frame, corners):
+def mask_court(corners, frame=None, h=None, w=None):
     """
-    Funzione che ritorna maschera binaria del campo
+    Funzione che ritorna maschera binaria (0, 255) del campo
     """
+    if frame is not None:
+        h, w = frame.shape[:2]
+    if frame is None and not (h and w):
+        raise Exception("Fornire il frame o le sue dimensioni")
+
+
     court = np.array([[corners['P0']['x'], corners['P0']['y']], [corners['P3']['x'], corners['P3']['y']], [corners['P11']['x'], corners['P11']['y']], [corners['P8']['x'], corners['P8']['y']], [corners['P0']['x'], corners['P0']['y']]], dtype=np.int32)
-    mask = np.zeros((frame.shape[0], frame.shape[1]), dtype=np.uint8)
+    mask = np.zeros((h, w), dtype=np.uint8)
     mask = cv2.fillPoly(mask, [court], 255)
     return mask
 
-def mask_3_point_line(frame, corners):
+def mask_3_point_line(corners, court_type=0, frame=None, h=None, w=None):
     """
     Funzione per calcolar una maschera binaria che rappresenta tutti i punti dentro la linea da 3 punti
     """
-    h, w = frame.shape[:2]
+    if frame:
+        h, w = frame.shape[:2]
+    if not frame and not (h and w):
+        raise Exception("Fornire il frame o le sue dimensioni")
 
     foot1 = h / 50
     foot2 = w / 94
@@ -101,7 +138,10 @@ def mask_3_point_line(frame, corners):
     ]
 
     cv2.rectangle(mask, three_point_line_left[0], three_point_line_left[3], 255, -1)
-    cv2.ellipse(mask, rim_left[0], (feet(23, foot, 9), feet(23, foot, 9)), 0, -72, 70, 255, -1)
+    if court_type == 0:
+        cv2.ellipse(mask, rim_left[0], (feet(23, foot, 9), feet(23, foot, 9)), 0, -72, 70, 255, -1)
+    elif court_type == 1:
+        cv2.ellipse(mask, rim_left[0], (feet(21, foot, 9), feet(21, foot, 9)), 0, -72, 70, 255, -1)
 
 
     three_point_line_right = [(w, int(h - feet(3, foot))),
@@ -111,9 +151,12 @@ def mask_3_point_line(frame, corners):
     ]
 
     cv2.rectangle(mask, three_point_line_right[0], three_point_line_right[3], 255, -1)
-    cv2.ellipse(mask, rim_right[0], (feet(23, foot, 9), feet(23, foot, 9)), 0, 110, 250, 255, -1)
+    if court_type == 0:
+        cv2.ellipse(mask, rim_right[0], (feet(23, foot, 9), feet(23, foot, 9)), 0, 110, 250, 255, -1)
+    if court_type == 1:
+        cv2.ellipse(mask, rim_right[0], (feet(21, foot, 9), feet(21, foot, 9)), 0, 110, 250, 255, -1)
 
-    mask = top_view(mask, corners, inverse=True)
+    mask = top_view(mask, corners, inverse=True, court_type=court_type)
 
     return mask
 
@@ -128,22 +171,26 @@ def mask_free_throw_lines(frame, corners):
 
     return mask
 
-def find_homography_matrix(frame, corners, inverse=False):
+def find_homography_matrix(corners, inverse=False, court_type=0, frame=None, h=None, w=None):
     """
     Funzione per calcolare la matrice di omografia dal camera plane al court plane
     """
+    # if frame is None:
+    #     h, w = frame.shape[:2]
+    # if frame is not None and not (h and w):
+    #     raise Exception("Fornire il frame o le sue dimensioni")
     h, w = frame.shape[:2]
-    
+
     src = []
     dst = []
 
     for id, corner in corners.items():
         if inverse:
-            src.append([corner_pos(id, w, h)])
+            src.append([corner_pos(id, w, h, court_type)])
             dst.append([corner['x'], corner['y']])
         else:
             src.append([corner['x'], corner['y']])
-            dst.append([corner_pos(id, w, h)])
+            dst.append([corner_pos(id, w, h, court_type)])
 
     src = np.array(src, dtype=np.float32)
     src = src.reshape(-1, 1, 2)
@@ -155,19 +202,29 @@ def find_homography_matrix(frame, corners, inverse=False):
 
     return M, status
 
+def project_coordinates(frame, point, corners, court_type=0):
+    h, w = frame.shape[:2]
+    x, y = point
+    M, _ = find_homography_matrix(corners, frame=frame, court_type=court_type)
 
-def find_missing_corners(frame, corners):
+    point_projected = cv2.perspectiveTransform(np.array([[[x, y]]], dtype=np.float32), M)[0][0]
+
+    return point_projected
+
+
+
+def find_missing_corners(frame, corners, court_type=0):
     """
     Funzione per calcolare gli angoli non inseriti dall'utente (Possono avere cooridnate negative o maggiori di altezza/larghezza)
     """
-    M, status = find_homography_matrix(frame, corners, inverse=True)
+    M, status = find_homography_matrix(frame, corners, inverse=True, court_type=court_type)
 
     ids = [f'P{i}' for i in range(NUM_CORNERS)]
     new_corners = corners
 
     for id in ids:
         if id not in corners:
-            corner = corner_pos(id, frame.shape[1], frame.shape[0])
+            corner = corner_pos(id, frame.shape[1], frame.shape[0], court_type=court_type)
             corner = cv2.perspectiveTransform(np.array([[corner]], dtype=np.float32), M)[0][0]
             corner = np.round(corner)
             new_corners[id] = {'x': int(corner[0]), 'y': int(corner[1])}

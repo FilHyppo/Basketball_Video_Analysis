@@ -66,10 +66,14 @@ def main():
     video_path = "../input_videos/partita_2.mp4"
 
     # Estrai e salva il frame 1570 come immagine
-    save_frame_from_video(video_path, frame_number=1570, output_image_path='../outputs/frame_1570.jpg')
-    image_path = '../outputs/frame_1570.jpg'
+    save_frame_from_video(video_path, frame_number=(51+60)*30, output_image_path='../outputs/frame.jpg')
+    image_path = '../outputs/frame.jpg'
 
-    save_image_with_bbox(image_path, (213,674,23,23))
+    save_image_with_bbox(image_path,(1725,194,57,47) )
 
 if __name__ == '__main__':
     main()
+
+
+#(1460,194,57,47)
+#(1725,194,57,47)

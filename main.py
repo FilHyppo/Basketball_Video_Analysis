@@ -19,8 +19,8 @@ lower_ball_color, upper_ball_color = get_ball_color_range(bounding_box, frame)
 
 
 
-video_capture = cv2.VideoCapture('input_videos/partita_2.mp4')
-output_video=cv2.VideoWriter('outputs/partita_2.avi', cv2.VideoWriter_fourcc(*'XVID'), video_capture.get(cv2.CAP_PROP_FPS), 
+video_capture = cv2.VideoCapture('input_videos/out.mp4')
+output_video=cv2.VideoWriter('outputs/out.avi', cv2.VideoWriter_fourcc(*'XVID'), video_capture.get(cv2.CAP_PROP_FPS), 
                                             (int(video_capture.get(3)), int(video_capture.get(4))))
 _, base_frame = video_capture.read()
 
@@ -63,8 +63,8 @@ score_detector = BasketballScoreDetector(
     verbose=True
 )
 
-score_detector.upper_ball_color = upper_ball_color
-score_detector.lower_ball_color = lower_ball_color
+#score_detector.upper_ball_color = upper_ball_color
+#score_detector.lower_ball_color = lower_ball_color
 
 # # detector = BasketballHoopDetector(
 # #     video_path='input_videos/example.mp4',
@@ -77,7 +77,7 @@ score_detector.lower_ball_color = lower_ball_color
 
 prec_score=None
 count=0
-file=open('outputs/labels.txt', 'w')
+file=open('outputs/out.txt', 'w')
 file.write(f"{0},{score_detector.states[0].score},{score_detector.states[1].score}\n")
 last_score_sx=0
 last_score_dx=0
@@ -104,7 +104,7 @@ while video_capture.isOpened():
         file.write(f"{count},{0},{0}\n")
     frame=score_detector.write_score(frame)
     output_video.write(frame)
-    #cv2.imwrite("outputs/frame" + str(count) + ".jpg", score_detector.ball_mask)
+    cv2.imwrite("outputs/frame" + str(count) + ".jpg", score_detector.ball_mask)
 
 
 video_capture.release()

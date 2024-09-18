@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import os
-from geometry import *
+from .geometry import *
 
 def line_intersection(line1, line2) -> tuple:
     # Estrai i punti

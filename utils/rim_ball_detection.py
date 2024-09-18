@@ -92,10 +92,16 @@ class RimBallDetector:
 
         return detections
 
-    def predict(self, input_video_path, output_video_path, save=True, save_txt=False, label_file_path=None) -> None:
+    def predict(self, input_video_path, output_video_path=None, save=True, save_txt=False, label_file_path=None) -> None:
         """
         Funzione che prende in input un video e crea un video annotato con palle e canestri
         """ 
+        print(f"[+] Predizione iniziata con parametri:") 
+        print(f"\t- input_video_path:{input_video_path}") 
+        print(f"\t- output_video_path:{output_video_path}, ")
+        print(f"\t- save:{save},")
+        print(f"\t- save_txt:{save_txt},")
+        print(f"\t- label_file_path:{label_file_path}")
         
         cap = cv2.VideoCapture(input_video_path)
 
@@ -132,16 +138,15 @@ class RimBallDetector:
             
             print(f"Processato il frame {frame_number}/{tot_frames}")
         
+        cap.release()
+        
         if save_txt:
             with open(label_file_path, 'w') as f:
                 f.writelines(lines)
-
-        cap.release()
-        video_out.release()
-        if save:
-            print("Fine inferenza, video salvato in", output_video_path)
-        if save_txt:
             print("Fine inferenza, labels file salvato in", label_file_path)
+        if save:
+            video_out.release()
+            print("Fine inferenza, video salvato in", output_video_path)
 
     def get_hoop_regions(self, input_video_path):
         cap = cv2.VideoCapture(input_video_path)
@@ -234,6 +239,33 @@ class RimBallDetector:
 
         return out
 
+def annotate_frame_ball_rim(frame, detections: sv.Detections) -> cv2.UMat:
+        class_names = ['ball', 'rim', 'player']
+        palette = sv.ColorPalette([sv.Color.BLUE, sv.Color.RED, sv.Color.GREEN])
+        bbox_annotator = sv.BoxAnnotator(
+            color=palette,
+            )
+        label_annotator = sv.LabelAnnotator(
+            color=palette,
+            text_scale=0.2,
+            color_lookup=sv.ColorLookup.CLASS, # si può fare per trakcking anche
+        )
+        out = bbox_annotator.annotate(
+            frame.copy(),
+            detections,
+        )
+        labels = [class_names[id] + f", {conf:.3f}" for id, conf in zip(detections.class_id, detections.confidence)]
+        if detections.tracker_id is not None:
+            labels = [label + f", ID:{id}" if id is not None else label for label, id in zip(labels, detections.tracker_id)]
+            labels = [label + f", team:{team}" if team is not None else label for label, team in zip(labels, detections.data["team"])]
+
+        out = label_annotator.annotate(
+            out.copy(),
+            detections,
+            labels=labels
+        )
+
+        return out
 
 
 def main():
@@ -246,11 +278,12 @@ def main():
     output_dir = os.path.abspath(output_dir)
 
     input_video_path: str = args.input_video
+    input_video_path = os.path.abspath(input_video_path)
 
     model_path = '/work/cvcs2024/Basketball_Video_Analysis/repo/Basketball_Video_Analysis/best_weights.pt'
     model = RimBallDetector(model_path)
     
-    output_video_path = os.path.join(output_dir, f"video/{os.path.basename(input_video_path).split('.')[0]}.mp4") # Solo per debug
+    output_video_path = os.path.join(output_dir, f"ball_rim_video/{os.path.basename(input_video_path).split('.')[0]}.mp4") # Solo per debug
     label_file_path = os.path.join(output_dir, f"ball_rim_labels/{os.path.basename(input_video_path).split('.')[0]}.txt")
     
     os.makedirs(os.path.dirname(output_video_path), exist_ok=True)

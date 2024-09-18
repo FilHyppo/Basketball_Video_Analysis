@@ -248,7 +248,7 @@ class BasketballScoreDetector:
                             object_area = w * h
                     
                             # Se una parte significativa dell'oggetto corrisponde alla palla, lo consideriamo come la palla
-                            if ball_pixels / object_area < 0.5:  # Almeno il 50% dell'area deve essere del colore della palla
+                            if ball_pixels / object_area < 0.15:  # Almeno il 50% dell'area deve essere del colore della palla
                                 cv2.putText(frame, "No Ball", (400,400), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
                                 continue
                         
@@ -257,8 +257,17 @@ class BasketballScoreDetector:
                     
                     if (hoop_top_left[0] < x < hoop_bottom_right[0] and 
                         hoop_top_left[1] < y < hoop_bottom_right[1]):
-                        founds[idx]=True
                         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 255), 2)
+                        if ball_mask is not None:
+                            object_region = ball_mask[y:y+h, x:x+w]
+                            ball_pixels = cv2.countNonZero(object_region)
+                            object_area = w * h
+                    
+                            # Se una parte significativa dell'oggetto corrisponde alla palla, lo consideriamo come la palla
+                            if ball_pixels / object_area < 0.15:  # Almeno il 50% dell'area deve essere del colore della palla
+                                cv2.putText(frame, "No Ball", (400,400), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
+                                continue
+                        founds[idx]=True
                         if self.verbose:
                             print(f"Frame {self.frame_count}: Detected moving object in the hoop area")
                         detected=True
