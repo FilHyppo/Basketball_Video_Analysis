@@ -1,20 +1,17 @@
 # CVCS_24
 
+This repository contains the code and materials related to the computer vision project aimed at analyzing basketball game statistics. The project leverages computer vision and AI techniques to extract useful information from game videos, such as point counting, player detection, and other game metrics.
 
-Questo repository contiene il codice e i materiali relativi al progetto di computer vision finalizzato all'analisi di statistiche di partite di basket. Il progetto si basa su tecniche di computer vision e AI per estrarre informazioni utili da video di partite, come il conteggio dei punti segnati, il rilevamento dei giocatori e altre metriche di gioco.
+## Project Description
 
-## Descrizione del Progetto
+The project focuses on using computer vision algorithms to analyze video data from basketball games. Some of the main features include:
 
-Il progetto si concentra sull'utilizzo di algoritmi di computer vision per l'analisi dei dati video delle partite di basket. Alcune delle funzionalità principali includono:
+- **Players, Rims, Ball Detection**: By using object detection algorithms, the goal is to identify track players and find the position of ball and hoops on the court during a basketball game.
 
-- **Rilevamento dei giocatori**: Utilizzando algoritmi di rilevamento di oggetti, si mira a individuare e tracciare i giocatori in campo durante una partita di basket.
-  
-- **Conteggio dei punti**: Attraverso il riconoscimento di eventi come il lancio della palla e il passaggio attraverso l'anello, si intende automatizzare il conteggio dei punti segnati durante la partita.
-
+- **Point Counting**: Through event recognition, such as ball shooting and passing through the hoop, the system aims to automate the counting of points scored during the game.
 
 
-## Contributi
+## Contributions
 
-Il progetto è stato realizzato da Lorenzo Corradi, Marco Morini e Filippo Bologna, studenti di Artificial Intelligence presso UNIMORE
-
+The project was developed by Lorenzo Corradi, Marco Morini, and Filippo Bologna, students of Artificial Intelligence at UNIMORE.
 
